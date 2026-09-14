@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A96E"/>
+      <stop offset="100%" style="stop-color:#E0C58A"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#121212"/>
+  <text x="32" y="30" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="20" fill="url(#g1)" text-anchor="middle" letter-spacing="1.4">MOLY</text>
+  <text x="32" y="46" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="500" font-size="7" fill="#F5F0E8" text-anchor="middle" letter-spacing="1.8">HOME MASSAGE</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#121212"/>
+      <stop offset="100%" style="stop-color:#1C1C1C"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C9A96E"/>
+      <stop offset="100%" style="stop-color:#E0C58A"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="30%" cy="40%" r="60%">
+      <stop offset="0%" style="stop-color:#C9A96E;stop-opacity:0.18"/>
+      <stop offset="100%" style="stop-color:#C9A96E;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g transform="translate(100,180)">
+    <text font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="30" fill="url(#gold)" letter-spacing="6">MOLY HOME MASSAGE</text>
+    <text y="100" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="68" fill="#FFFFFF">Premium Massage, Wherever You Are</text>
+    <text y="170" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="400" font-size="30" fill="#A7A7A7">Professional home & hotel massage across Kuala Lumpur, Malaysia</text>
+  </g>
+  <g transform="translate(100,480)">
+    <rect x="0" y="0" width="520" height="70" rx="35" fill="rgba(201,169,110,0.12)" stroke="rgba(201,169,110,0.35)"/>
+    <text x="260" y="45" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="600" font-size="22" fill="url(#gold)" letter-spacing="4">HOME  •  HOTEL  •  OUTCALL</text>
+  </g>
+  <g transform="translate(100,40)">
+    <rect width="80" height="3" fill="url(#gold)" rx="1.5"/>
+  </g>
+</svg>
