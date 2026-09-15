@@ -158,6 +158,10 @@ class HomeController extends Controller
         if (in_array($locale, $allowedLocales)) {
             Session::put('locale', $locale);
             App::setLocale($locale);
+
+            return redirect()
+                ->back()
+                ->withCookie(cookie('locale', $locale, 60 * 24 * 365));
         }
 
         return redirect()->back();
