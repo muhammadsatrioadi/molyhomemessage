@@ -17,10 +17,12 @@
 @endphp
 <div class="card service-card h-100 reveal">
     <div class="service-card-image">
-        <img src="{{ $service->image ?? '/assets/images/service-placeholder.jpg' }}"
-             alt="{{ $service->name }} - professional massage service"
+        <img src="{{ $service->image_url }}"
+             alt="{{ $service->name }}"
              class="card-img-top"
-             loading="lazy">
+             loading="lazy"
+             decoding="async"
+             onerror="this.onerror=null;this.src='{{ asset('assets/images/service-placeholder.jpg') }}';">
         <div class="service-card-overlay"></div>
         <div class="service-category-tag {{ $cat['class'] }}">{{ $cat['label'] }}</div>
         @if($service->prices->count() > 0)

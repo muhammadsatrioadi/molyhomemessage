@@ -35,9 +35,9 @@
             <div class="col-lg-6 reveal">
                 <div class="about-image-wrapper">
                     <div class="about-image-overlay"></div>
-                    <img src="/assets/images/about-1.jpg"
-                         alt="Professional massage session {{ config('moly.business.name') }}"
-                         class="about-home-img" loading="lazy">
+                    <img src="{{ asset('assets/images/about-1.jpg') }}"
+                         alt="Professional massage session — {{ config('moly.business.name') }}"
+                         class="about-home-img" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6 reveal-delay-1">
@@ -71,9 +71,9 @@
             <div class="col-lg-6 reveal">
                 <div class="about-image-wrapper about-image-wrapper-alt">
                     <div class="about-image-overlay"></div>
-                    <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional%20female%20massage%20therapist%20arranging%20portable%20massage%20table%20with%20fresh%20linens%2C%20aromatherapy%20oils%2C%20premium%20towels%20in%20minimal%20elegant%20room%2C%20soft%20warm%20ambient%20lighting%2C%20calm%20wellness%20atmosphere%2C%20therapist%20face%20not%20visible%20focus%20on%20hands%20and%20equipment&image_size=landscape_16_9"
-                         alt="{{ config('moly.business.name') }} therapist preparing portable table and oils"
-                         class="about-home-img" loading="lazy">
+                    <img src="{{ asset('assets/images/about-equipment.jpg') }}"
+                         alt="{{ config('moly.business.name') }} — portable massage table and wellness setup"
+                         class="about-home-img" loading="lazy" decoding="async">
                 </div>
             </div>
             <div class="col-lg-6 reveal-delay-1">

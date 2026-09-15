@@ -61,8 +61,10 @@
         <div class="row g-4 g-lg-5">
             <div class="col-lg-4 reveal">
                 <div class="techniques-card h-100">
-                    <div class="techniques-card-icon"><i class="bi bi-person-check"></i></div>
-                    <h4 class="techniques-card-title font-display mb-4">@lang('messages.techniques.card_full_title')</h4>
+                    <h4 class="techniques-card-title font-display mb-4">
+                        <span class="techniques-card-icon"><i class="bi bi-person-check"></i></span>
+                        @lang('messages.techniques.card_full_title')
+                    </h4>
                     <ul class="techniques-list list-unstyled mb-0">
                         @foreach(__('messages.techniques.card_full_items') as $item)
                             <li><i class="bi bi-check2-circle gold-text me-2"></i>{{ $item }}</li>
@@ -72,8 +74,10 @@
             </div>
             <div class="col-lg-4 reveal-delay-1">
                 <div class="techniques-card h-100">
-                    <div class="techniques-card-icon"><i class="bi bi-head-side"></i></div>
-                    <h4 class="techniques-card-title font-display mb-4">@lang('messages.techniques.card_head_title')</h4>
+                    <h4 class="techniques-card-title font-display mb-4">
+                        <span class="techniques-card-icon"><i class="bi bi-bandaid-fill"></i></span>
+                        @lang('messages.techniques.card_head_title')
+                    </h4>
                     <ul class="techniques-list list-unstyled mb-0">
                         @foreach(__('messages.techniques.card_head_items') as $item)
                             <li><i class="bi bi-check2-circle gold-text me-2"></i>{{ $item }}</li>
@@ -83,8 +87,10 @@
             </div>
             <div class="col-lg-4 reveal-delay-2">
                 <div class="techniques-card h-100">
-                    <div class="techniques-card-icon"><i class="bi bi-sparkles"></i></div>
-                    <h4 class="techniques-card-title font-display mb-4">@lang('messages.techniques.card_special_title')</h4>
+                    <h4 class="techniques-card-title font-display mb-4">
+                        <span class="techniques-card-icon"><i class="bi bi-stars"></i></span>
+                        @lang('messages.techniques.card_special_title')
+                    </h4>
                     <ul class="techniques-list list-unstyled mb-0">
                         @foreach(__('messages.techniques.card_special_items') as $item)
                             <li><i class="bi bi-check2-circle gold-text me-2"></i>{{ $item }}</li>

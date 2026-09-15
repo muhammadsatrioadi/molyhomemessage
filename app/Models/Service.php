@@ -35,4 +35,23 @@ class Service extends Model
     {
         return $this->prices->min('price') ?? 0;
     }
+
+    public function getImageUrlAttribute(): string
+    {
+        $placeholder = asset('assets/images/service-placeholder.jpg');
+        $path = $this->image ?: '/assets/images/service-placeholder.jpg';
+
+        if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+            return $path;
+        }
+
+        $relative = ltrim($path, '/');
+        $publicPath = public_path($relative);
+
+        if (!is_file($publicPath) || filesize($publicPath) < 5000) {
+            return $placeholder;
+        }
+
+        return asset($relative);
+    }
 }

@@ -76,8 +76,10 @@
         <div class="row g-4 g-lg-5">
             <div class="col-lg-4 reveal">
                 <div class="techniques-card h-100">
-                    <div class="techniques-card-icon"><i class="bi bi-person-check"></i></div>
-                    <h4 class="techniques-card-title font-display mb-4">@lang('messages.techniques.card_full_title')</h4>
+                    <h4 class="techniques-card-title font-display mb-4">
+                        <span class="techniques-card-icon"><i class="bi bi-person-check"></i></span>
+                        @lang('messages.techniques.card_full_title')
+                    </h4>
                     <ul class="techniques-list list-unstyled mb-0">
                         @foreach(__('messages.techniques.card_full_items') as $item)
                             <li><i class="bi bi-check2-circle gold-text me-2"></i>{{ $item }}</li>
@@ -87,8 +89,10 @@
             </div>
             <div class="col-lg-4 reveal-delay-1">
                 <div class="techniques-card h-100">
-                    <div class="techniques-card-icon"><i class="bi bi-head-side"></i></div>
-                    <h4 class="techniques-card-title font-display mb-4">@lang('messages.techniques.card_head_title')</h4>
+                    <h4 class="techniques-card-title font-display mb-4">
+                        <span class="techniques-card-icon"><i class="bi bi-bandaid-fill"></i></span>
+                        @lang('messages.techniques.card_head_title')
+                    </h4>
                     <ul class="techniques-list list-unstyled mb-0">
                         @foreach(__('messages.techniques.card_head_items') as $item)
                             <li><i class="bi bi-check2-circle gold-text me-2"></i>{{ $item }}</li>
@@ -98,8 +102,10 @@
             </div>
             <div class="col-lg-4 reveal-delay-2">
                 <div class="techniques-card h-100">
-                    <div class="techniques-card-icon"><i class="bi bi-sparkles"></i></div>
-                    <h4 class="techniques-card-title font-display mb-4">@lang('messages.techniques.card_special_title')</h4>
+                    <h4 class="techniques-card-title font-display mb-4">
+                        <span class="techniques-card-icon"><i class="bi bi-stars"></i></span>
+                        @lang('messages.techniques.card_special_title')
+                    </h4>
                     <ul class="techniques-list list-unstyled mb-0">
                         @foreach(__('messages.techniques.card_special_items') as $item)
                             <li><i class="bi bi-check2-circle gold-text me-2"></i>{{ $item }}</li>
@@ -116,9 +122,10 @@
     <div class="container">
         <div class="feature-split feature-hotel reveal">
             <div class="feature-split-image order-2 order-lg-1">
-                <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Premium%20hotel%20room%20massage%20setting%20in%20Kuala%20Lumpur%2C%20elegant%205%20star%20room%20with%20portable%20massage%20table%2C%20soft%20ambient%20lighting%2C%20aromatherapy%20oils%2C%20fresh%20linens%2C%20city%20skyline%20window%20view%2C%20professional%20calm%20wellness%20atmosphere%2C%20no%20people%20faces&image_size=landscape_16_9"
-                     alt="Hotel Room Massage Kuala Lumpur - therapist comes to your hotel room"
-                     loading="lazy">
+                <img src="{{ asset('assets/images/section-hotel-room.jpg') }}"
+                     alt="Hotel room massage — professional in-room wellness service"
+                     loading="lazy"
+                     decoding="async">
             </div>
             <div class="feature-split-text-card order-1 order-lg-2">
                 <span class="feature-split-label d-inline-flex align-items-center mb-3">
@@ -164,9 +171,10 @@
                 </a>
             </div>
             <div class="feature-split-image order-2 order-lg-2">
-                <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Professional%20couples%20massage%20room%20with%20two%20side%20by%20side%20massage%20tables%2C%20premium%20spa%20atmosphere%2C%20soft%20candles%2C%20aromatherapy%20diffuser%2C%20warm%20neutral%20tones%2C%20elegant%20potted%20plants%2C%20clean%20fresh%20linens%2C%20no%20people%20faces%2C%20wellness%20ambient&image_size=landscape_16_9"
-                     alt="Couples and Shared Sessions massage Kuala Lumpur side by side"
-                     loading="lazy">
+                <img src="{{ asset('assets/images/section-couples.jpg') }}"
+                     alt="Couples and shared sessions — side-by-side professional massage"
+                     loading="lazy"
+                     decoding="async">
             </div>
         </div>
     </div>
@@ -176,9 +184,10 @@
     <div class="container">
         <div class="feature-split feature-home reveal">
             <div class="feature-split-image order-2 order-lg-1">
-                <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Premium%20apartment%20living%20room%20home%20massage%20setting%2C%20portable%20massage%20table%20set%20up%20near%20floor%20to%20ceiling%20window%2C%20elegant%20minimal%20interior%20design%2C%20soft%20warm%20lighting%2C%20aromatherapy%20oils%20and%20towel%2C%20calm%20cozy%20wellness%20feeling%2C%20no%20people%20faces&image_size=landscape_16_9"
-                     alt="Home massage Kuala Lumpur - therapist comes to your comfortable home"
-                     loading="lazy">
+                <img src="{{ asset('assets/images/section-home-massage.jpg') }}"
+                     alt="Home massage — therapist comes to your comfortable residence"
+                     loading="lazy"
+                     decoding="async">
             </div>
             <div class="feature-split-text-card order-1 order-lg-2">
                 <span class="feature-split-label d-inline-flex align-items-center mb-3">
@@ -334,10 +343,11 @@
             <div class="col-lg-6 reveal">
                 <div class="about-image-wrapper">
                     <div class="about-image-overlay"></div>
-                    <img src="/assets/images/about-home.jpg"
-                         alt="Professional massage therapy environment {{ config('moly.business.name') }}"
+                    <img src="{{ asset('assets/images/about-home.jpg') }}"
+                         alt="Professional massage therapy environment — {{ config('moly.business.name') }}"
                          class="about-home-img"
-                         loading="lazy">
+                         loading="lazy"
+                         decoding="async">
                 </div>
             </div>
             <div class="col-lg-6 reveal-delay-1">

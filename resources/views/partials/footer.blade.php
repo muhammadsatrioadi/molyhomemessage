@@ -1,8 +1,9 @@
 <footer class="moly-footer pt-5 pb-0">
     <div class="footer-image-strip d-none d-lg-block">
-        <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Elegant%20spa%20wellness%20ambient%20banner%20with%20warm%20candle%20light%2C%20stacked%20white%20towel%2C%20aromatherapy%20oils%2C%20smooth%20stones%2C%20dried%20lavender%2C%20soft%20gold%20and%20cream%20tones%2C%20premium%20massage%20brand%20atmosphere%2C%20wide%20panoramic&image_size=landscape_16_9"
-             alt="{{ config('moly.business.name') }} premium wellness banner footer"
-             loading="lazy">
+        <img src="{{ asset('assets/images/section-footer-banner.jpg') }}"
+             alt="{{ config('moly.business.name') }} premium wellness banner"
+             loading="lazy"
+             decoding="async">
         <div class="footer-image-overlay"></div>
     </div>
 

@@ -552,8 +552,10 @@ body.moly-body {
     position: relative;
     aspect-ratio: 16 / 10;
     overflow: hidden;
+    background: linear-gradient(145deg, #1a1a1a 0%, #252525 100%);
 }
 .service-card-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -829,6 +831,7 @@ body.moly-body {
     border-radius: var(--moly-radius-lg);
     overflow: hidden;
     box-shadow: var(--moly-shadow-lg);
+    background: linear-gradient(145deg, #1a1a1a 0%, #252525 100%);
 }
 .about-home-img {
     width: 100%;
@@ -861,6 +864,7 @@ body.moly-body {
     position: relative;
     min-height: 420px;
     overflow: hidden;
+    background: linear-gradient(145deg, #1a1a1a 0%, #252525 100%);
 }
 .feature-split-image img {
     position: absolute;
@@ -976,7 +980,8 @@ body.moly-body {
     gap: 0.8rem;
 }
 .techniques-card-icon {
-    width: 44px; height: 44px;
+    width: 44px;
+    height: 44px;
     border-radius: 14px;
     background: linear-gradient(135deg, rgba(212, 175, 104, 0.16), rgba(232, 211, 154, 0.06));
     border: 1px solid rgba(212, 175, 104, 0.26);
@@ -984,8 +989,13 @@ body.moly-body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+    line-height: 1;
     flex-shrink: 0;
+}
+.techniques-card-icon i {
+    display: block;
+    line-height: 1;
 }
 .techniques-list {
     list-style: none;
