@@ -54,7 +54,7 @@ return [
             ],
             [
                 'title' => 'Liputan Kuala Lumpur',
-                'desc' => 'Melayan kawasan terpilih di seluruh Kuala Lumpur termasuk KLCC, Bukit Bintang, Bangsar dan banyak lagi.',
+                'desc' => 'Melayan kawasan terpilih di seluruh Kuala Lumpur termasuk KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, Bangsar dan banyak lagi.',
             ],
             [
                 'title' => 'Tempahan WhatsApp Mudah',

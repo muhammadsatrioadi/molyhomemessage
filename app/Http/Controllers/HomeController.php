@@ -90,12 +90,12 @@ class HomeController extends Controller
 
         $seo = [
             'title' => __('messages.nav.areas') . ' | ' . config('moly.business.name'),
-            'description' => 'MOLY HOME MASSAGE service areas in Kuala Lumpur including KLCC, Bukit Bintang, KL Sentral, Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak and Cheras.',
+            'description' => 'MOLY HOME MASSAGE service areas in Kuala Lumpur including KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, KL Sentral, Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak and Cheras.',
             'robots' => 'index, follow',
             'canonical' => route('areas'),
             'og_type' => 'website',
             'og_title' => __('messages.nav.areas') . ' | ' . config('moly.business.name'),
-            'og_description' => 'MOLY HOME MASSAGE service areas in Kuala Lumpur including KLCC, Bukit Bintang, KL Sentral, Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak and Cheras.',
+            'og_description' => 'MOLY HOME MASSAGE service areas in Kuala Lumpur including KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, KL Sentral, Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak and Cheras.',
             'og_image' => asset('/assets/images/og-image.jpg'),
             'og_url' => route('areas'),
             'twitter_card' => 'summary_large_image',

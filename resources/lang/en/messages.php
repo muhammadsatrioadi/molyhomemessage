@@ -54,7 +54,7 @@ return [
             ],
             [
                 'title' => 'Kuala Lumpur Coverage',
-                'desc' => 'Serving selected areas across Kuala Lumpur including KLCC, Bukit Bintang, Bangsar and more.',
+                'desc' => 'Serving selected areas across Kuala Lumpur including KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, Bangsar and more.',
             ],
             [
                 'title' => 'Easy WhatsApp Booking',

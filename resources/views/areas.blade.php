@@ -39,9 +39,10 @@
                     <div class="info-icon mb-4 gold-text"><i class="bi bi-geo-alt"></i></div>
                     <h3 class="info-title mb-3">City Centre Coverage</h3>
                     <p class="info-desc mb-0">
-                        Our most frequented areas include the vibrant KLCC and Bukit Bintang districts, where we
-                        serve guests staying in major hotels and serviced apartments. We also regularly visit the
-                        KL Sentral transportation hub area for convenience of travellers and commuters.
+                        Our most frequented areas include the vibrant KLCC, Bukit Bintang, Bukit Tunku, Chowkit,
+                        Medan Tuanku and Pudu districts, where we serve guests staying in major hotels and
+                        serviced apartments. We also regularly visit the KL Sentral transportation hub area
+                        for convenience of travellers and commuters.
                     </p>
                 </div>
             </div>
