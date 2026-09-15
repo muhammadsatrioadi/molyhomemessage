@@ -204,7 +204,7 @@
 
                 var waNumber = (window.MOLY_WHATSAPP || '').replace(/\D+/g, '');
                 var messageLines = [
-                    'Hello MOLY HOME MASSAGE,',
+                    'Hello ' + (window.MOLY_BUSINESS_NAME || 'MOLLY KL HOME MASSAGE') + ',',
                     '',
                     'I would like to book:',
                     '',

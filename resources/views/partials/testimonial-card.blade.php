@@ -9,7 +9,7 @@
                 @endif
             @endfor
         </div>
-        <p class="testimonial-content mb-4">
+        <p class="testimonial-content mb-4 font-display-italic">
             "{{ $testimonial->content }}"
         </p>
         <div class="testimonial-author d-flex align-items-center">
@@ -17,7 +17,7 @@
                 <span>{{ strtoupper(substr($testimonial->name, 0, 1)) }}</span>
             </div>
             <div>
-                <h5 class="testimonial-name mb-0">{{ $testimonial->name }}</h5>
+                <h5 class="testimonial-name mb-0 font-display">{{ $testimonial->name }}</h5>
                 <span class="testimonial-role">Valued Client</span>
             </div>
         </div>

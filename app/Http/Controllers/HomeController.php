@@ -67,17 +67,17 @@ class HomeController extends Controller
     {
         $seo = [
             'title' => __('messages.nav.about') . ' | ' . config('moly.business.name'),
-            'description' => 'MOLY HOME MASSAGE provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
+            'description' => config('moly.business.name') . ' provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
             'robots' => 'index, follow',
             'canonical' => route('about'),
             'og_type' => 'website',
             'og_title' => __('messages.nav.about') . ' | ' . config('moly.business.name'),
-            'og_description' => 'MOLY HOME MASSAGE provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
+            'og_description' => config('moly.business.name') . ' provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
             'og_image' => asset('/assets/images/og-image.jpg'),
             'og_url' => route('about'),
             'twitter_card' => 'summary_large_image',
             'twitter_title' => __('messages.nav.about') . ' | ' . config('moly.business.name'),
-            'twitter_description' => 'MOLY HOME MASSAGE provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
+            'twitter_description' => config('moly.business.name') . ' provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
             'twitter_image' => asset('/assets/images/og-image.jpg'),
         ];
 
@@ -90,17 +90,17 @@ class HomeController extends Controller
 
         $seo = [
             'title' => __('messages.nav.areas') . ' | ' . config('moly.business.name'),
-            'description' => 'MOLY HOME MASSAGE service areas in Kuala Lumpur including KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, KL Sentral, Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak and Cheras.',
+            'description' => config('moly.business.name') . ' service areas in Kuala Lumpur including KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, TRX, Brickfield, Bangsar, Damansara Heights, Petaling Jaya, Ampang, Kenny Hills, Melawati, Titiwangsa, Seputeh and more.',
             'robots' => 'index, follow',
             'canonical' => route('areas'),
             'og_type' => 'website',
             'og_title' => __('messages.nav.areas') . ' | ' . config('moly.business.name'),
-            'og_description' => 'MOLY HOME MASSAGE service areas in Kuala Lumpur including KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, KL Sentral, Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak and Cheras.',
+            'og_description' => config('moly.business.name') . ' service areas across Kuala Lumpur and selected suburbs. View full coverage on our areas page.',
             'og_image' => asset('/assets/images/og-image.jpg'),
             'og_url' => route('areas'),
             'twitter_card' => 'summary_large_image',
             'twitter_title' => __('messages.nav.areas') . ' | ' . config('moly.business.name'),
-            'twitter_description' => 'MOLY HOME MASSAGE service areas in Kuala Lumpur.',
+            'twitter_description' => config('moly.business.name') . ' service areas in Kuala Lumpur and greater KL.',
             'twitter_image' => asset('/assets/images/og-image.jpg'),
         ];
 
@@ -113,17 +113,17 @@ class HomeController extends Controller
 
         $seo = [
             'title' => __('messages.nav.faq') . ' | ' . config('moly.business.name'),
-            'description' => 'Frequently asked questions about MOLY HOME MASSAGE services, booking, areas and payment.',
+            'description' => 'Frequently asked questions about ' . config('moly.business.name') . ' services, booking, areas and payment.',
             'robots' => 'index, follow',
             'canonical' => route('faq'),
             'og_type' => 'website',
             'og_title' => __('messages.nav.faq') . ' | ' . config('moly.business.name'),
-            'og_description' => 'Frequently asked questions about MOLY HOME MASSAGE services, booking, areas and payment.',
+            'og_description' => 'Frequently asked questions about ' . config('moly.business.name') . ' services, booking, areas and payment.',
             'og_image' => asset('/assets/images/og-image.jpg'),
             'og_url' => route('faq'),
             'twitter_card' => 'summary_large_image',
             'twitter_title' => __('messages.nav.faq') . ' | ' . config('moly.business.name'),
-            'twitter_description' => 'Frequently asked questions about MOLY HOME MASSAGE services, booking, areas and payment.',
+            'twitter_description' => 'Frequently asked questions about ' . config('moly.business.name') . ' services, booking, areas and payment.',
             'twitter_image' => asset('/assets/images/og-image.jpg'),
         ];
 
@@ -134,17 +134,17 @@ class HomeController extends Controller
     {
         $seo = [
             'title' => __('messages.nav.contact') . ' | ' . config('moly.business.name'),
-            'description' => 'Contact MOLY HOME MASSAGE via WhatsApp or email for bookings and enquiries in Kuala Lumpur.',
+            'description' => 'Contact ' . config('moly.business.name') . ' via WhatsApp or email for bookings and enquiries in Kuala Lumpur.',
             'robots' => 'index, follow',
             'canonical' => route('contact'),
             'og_type' => 'website',
             'og_title' => __('messages.nav.contact') . ' | ' . config('moly.business.name'),
-            'og_description' => 'Contact MOLY HOME MASSAGE via WhatsApp or email for bookings and enquiries in Kuala Lumpur.',
+            'og_description' => 'Contact ' . config('moly.business.name') . ' via WhatsApp or email for bookings and enquiries in Kuala Lumpur.',
             'og_image' => asset('/assets/images/og-image.jpg'),
             'og_url' => route('contact'),
             'twitter_card' => 'summary_large_image',
             'twitter_title' => __('messages.nav.contact') . ' | ' . config('moly.business.name'),
-            'twitter_description' => 'Contact MOLY HOME MASSAGE via WhatsApp or email for bookings and enquiries in Kuala Lumpur.',
+            'twitter_description' => 'Contact ' . config('moly.business.name') . ' via WhatsApp or email for bookings and enquiries in Kuala Lumpur.',
             'twitter_image' => asset('/assets/images/og-image.jpg'),
         ];
 
@@ -167,7 +167,7 @@ class HomeController extends Controller
     {
         $seo = [
             'title' => 'Privacy Policy | ' . config('moly.business.name'),
-            'description' => 'Privacy Policy for MOLY HOME MASSAGE.',
+            'description' => 'Privacy Policy for ' . config('moly.business.name') . '.',
             'robots' => 'noindex, follow',
             'canonical' => route('privacy'),
         ];
@@ -178,7 +178,7 @@ class HomeController extends Controller
     {
         $seo = [
             'title' => 'Terms & Conditions | ' . config('moly.business.name'),
-            'description' => 'Terms and Conditions for MOLY HOME MASSAGE.',
+            'description' => 'Terms and Conditions for ' . config('moly.business.name') . '.',
             'robots' => 'noindex, follow',
             'canonical' => route('terms'),
         ];

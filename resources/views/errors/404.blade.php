@@ -18,8 +18,7 @@
     <div class="error-page">
         <div class="container">
             <div class="error-brand">
-                <span class="brand-primary">MOLY</span>
-                <span class="brand-secondary">HOME MASSAGE</span>
+                @include('partials.brand-mark')
             </div>
             <div class="error-code">404</div>
             <h1 class="error-title">Looks like this page took a wrong turn.</h1>

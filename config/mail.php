@@ -19,6 +19,6 @@ return [
     ],
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@molyhomemassage.com'),
-        'name' => env('MAIL_FROM_NAME', 'MOLY HOME MASSAGE'),
+        'name' => env('MAIL_FROM_NAME', 'MOLLY KL HOME MASSAGE'),
     ],
 ];

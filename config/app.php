@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'name' => env('APP_NAME', 'MOLY HOME MASSAGE'),
+    'name' => env('APP_NAME', 'MOLLY KL HOME MASSAGE'),
     'env' => env('APP_ENV', 'production'),
     'debug' => (bool) env('APP_DEBUG', false),
     'url' => env('APP_URL', 'https://molyhomemassage.com'),

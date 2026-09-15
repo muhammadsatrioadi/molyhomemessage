@@ -3,10 +3,20 @@
         <div class="modal-content moly-modal">
             <div class="modal-header moly-modal-header border-0">
                 <div>
-                    <h2 class="modal-title fs-4" id="bookingModalLabel">
+                    <h2 class="modal-title fs-4 font-display" id="bookingModalLabel">
                         <i class="bi bi-spa me-2 gold-text"></i>
                         @lang('messages.booking.modal_title')
                     </h2>
+                    <span class="moly-modal-badge mt-2 d-inline-flex align-items-center">
+                        <i class="bi bi-geo-alt-fill gold-text me-1"></i>
+                        @lang('messages.booking.modal_badge')
+                    </span>
+                    <div class="mt-2">
+                        <span class="no-sex-badge small d-inline-flex align-items-center">
+                            <i class="bi bi-shield-check me-1"></i>
+                            @lang('messages.policy.no_sex_short')
+                        </span>
+                    </div>
                 </div>
                 <button type="button" class="btn-close booking-close-btn" data-bs-dismiss="modal"
                         aria-label="@lang('messages.booking.close')"></button>
@@ -68,7 +78,7 @@
                             data-bs-dismiss="modal">
                         @lang('messages.booking.close')
                     </button>
-                    <button type="submit" class="btn btn-moly-gold booking-submit-btn flex-grow-1">
+                    <button type="submit" class="btn btn-whatsapp booking-submit-btn flex-grow-1 d-inline-flex align-items-center justify-content-center">
                         <i class="bi bi-whatsapp me-2"></i>
                         @lang('messages.booking.submit')
                     </button>

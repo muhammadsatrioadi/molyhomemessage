@@ -2,6 +2,13 @@
 
 @section('content')
 
+@php
+    $klcc = ['KLCC', 'Bukit Bintang', 'Bukit Tunku', 'Chowkit', 'Medan Tuanku', 'Pudu', 'TRX (Tun Razak Exchange)', 'KL Sentral', 'Brickfield'];
+    $fringe = ['Titiwangsa', 'Seputeh', 'Bangsar', 'Bukit Damansara', 'Damansara Heights', 'Ampang', 'Kenny Hills'];
+    $greater = ['Mont Kiara', 'Sri Hartamas', 'Petaling Jaya', 'Melawati', 'Setapak', 'Damansara', 'Cheras'];
+    $areasByName = $areas->keyBy('name');
+@endphp
+
 <section class="page-hero py-5 py-lg-6 page-hero-areas position-relative">
     <div class="hero-overlay"></div>
     <div class="container position-relative">
@@ -14,9 +21,9 @@
                     </ol>
                 </nav>
                 <span class="section-label gold-text mb-3 d-block">
-                    <i class="bi bi-dash-lg me-2"></i>@lang('messages.nav.areas')<i class="bi bi-dash-lg ms-2"></i>
+                    <i class="bi bi-dash-lg me-2"></i>@lang('messages.areas.label')<i class="bi bi-dash-lg ms-2"></i>
                 </span>
-                <h1 class="page-title mb-4">@lang('messages.areas.title')</h1>
+                <h1 class="page-title font-display mb-4">{!! __('messages.areas.title') !!}</h1>
                 <p class="page-subtitle mx-auto">@lang('messages.areas.subtitle')</p>
             </div>
         </div>
@@ -25,46 +32,78 @@
 
 <section class="moly-section py-5 py-lg-6">
     <div class="container">
-        <div class="areas-grid reveal mb-5">
-            @foreach($areas as $area)
-                <div class="area-chip area-chip-lg">
-                    <i class="bi bi-geo-alt-fill gold-text me-2"></i>{{ $area->name }}
-                </div>
-            @endforeach
+        <div class="mb-5 mb-lg-6 reveal">
+            <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_klcc_title')</h3>
+            <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_klcc_desc')</p>
+            <div class="areas-cards-grid">
+                @foreach($klcc as $name)
+                    @if(isset($areasByName[$name]))
+                        <div class="area-card">
+                            <span class="area-card-icon"><i class="bi bi-buildings"></i></span>
+                            <span class="area-card-name">{{ $areasByName[$name]->name }}</span>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+
+        <div class="mb-5 mb-lg-6 reveal-delay-1">
+            <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_fringe_title')</h3>
+            <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_fringe_desc')</p>
+            <div class="areas-cards-grid">
+                @foreach($fringe as $name)
+                    @if(isset($areasByName[$name]))
+                        <div class="area-card">
+                            <span class="area-card-icon"><i class="bi bi-tree"></i></span>
+                            <span class="area-card-name">{{ $areasByName[$name]->name }}</span>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
+        </div>
+
+        <div class="mb-5 mb-lg-6 reveal-delay-2">
+            <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_greater_title')</h3>
+            <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_greater_desc')</p>
+            <div class="areas-cards-grid">
+                @foreach($greater as $name)
+                    @if(isset($areasByName[$name]))
+                        <div class="area-card">
+                            <span class="area-card-icon"><i class="bi bi-geo-fill"></i></span>
+                            <span class="area-card-name">{{ $areasByName[$name]->name }}</span>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
         </div>
 
         <div class="row g-4 g-lg-5 mt-5">
             <div class="col-lg-6 reveal">
                 <div class="info-card h-100 p-4 p-lg-5">
-                    <div class="info-icon mb-4 gold-text"><i class="bi bi-geo-alt"></i></div>
-                    <h3 class="info-title mb-3">City Centre Coverage</h3>
+                    <div class="info-icon mb-4 gold-text"><i class="bi bi-buildings"></i></div>
+                    <h3 class="info-title font-display mb-3">@lang('messages.areas.cat_klcc_title')</h3>
                     <p class="info-desc mb-0">
-                        Our most frequented areas include the vibrant KLCC, Bukit Bintang, Bukit Tunku, Chowkit,
-                        Medan Tuanku and Pudu districts, where we serve guests staying in major hotels and
-                        serviced apartments. We also regularly visit the KL Sentral transportation hub area
-                        for convenience of travellers and commuters.
+                        Servis utama merangkumi kawasan KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, TRX, KL Sentral dan Brickfield, di mana kami melayan tetamu hotel-hotel utama, serviced residence dan pencawang perniagaan utama di sekitar pusat bandar.
                     </p>
                 </div>
             </div>
             <div class="col-lg-6 reveal-delay-1">
                 <div class="info-card h-100 p-4 p-lg-5">
                     <div class="info-icon mb-4 gold-text"><i class="bi bi-house-heart"></i></div>
-                    <h3 class="info-title mb-3">Residential Neighbourhoods</h3>
+                    <h3 class="info-title font-display mb-3">@lang('messages.areas.cat_fringe_title') & @lang('messages.areas.cat_greater_title')</h3>
                     <p class="info-desc mb-0">
-                        For residents of Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak and
-                        Cheras, we offer home visits directly to your apartment, condo, or landed residence.
-                        Enjoy a premium massage without stepping outside your home.
+                        Bagi penduduk Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak, Cheras, Damansara Heights, Bukit Damansara, Petaling Jaya, Titiwangsa, Seputeh, Melawati dan Kenny Hills — kami datang terus ke apartment, condo atau kediaman anda.
                     </p>
                 </div>
             </div>
         </div>
 
-        <div class="areas-note-box text-center mt-5 p-4 reveal-delay-2">
+        <div class="areas-note-box text-center mt-5 p-4 p-lg-5 reveal-delay-2">
             <i class="bi bi-info-circle gold-text me-2 fs-5"></i>
             <span class="areas-note-large">@lang('messages.areas.note')</span>
             <div class="mt-4">
                 <a href="{{ whatsapp_contact_url() }}" target="_blank" rel="noopener noreferrer"
-                   class="btn btn-moly-gold">
+                   class="btn btn-whatsapp d-inline-flex align-items-center">
                     <i class="bi bi-whatsapp me-2"></i>
                     @lang('messages.contact.cta')
                 </a>

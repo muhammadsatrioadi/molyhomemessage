@@ -4,7 +4,8 @@ if (!function_exists('whatsapp_booking_url')) {
     function whatsapp_booking_url(string $service, string $duration, string $date, string $time, string $location): string
     {
         $message = sprintf(
-            "Hello MOLY HOME MASSAGE,\n\nI would like to book:\n\nMassage: %s\nDuration: %s\nPreferred date: %s\nPreferred time: %s\nLocation: %s",
+            "Hello %s,\n\nI would like to book:\n\nMassage: %s\nDuration: %s\nPreferred date: %s\nPreferred time: %s\nLocation: %s",
+            config('moly.business.name', 'MOLLY KL HOME MASSAGE'),
             $service,
             $duration,
             $date,
@@ -22,7 +23,7 @@ if (!function_exists('whatsapp_booking_url')) {
 if (!function_exists('whatsapp_contact_url')) {
     function whatsapp_contact_url(?string $message = null): string
     {
-        $defaultMessage = 'Hello MOLY HOME MASSAGE, I would like to make an enquiry.';
+        $defaultMessage = 'Hello ' . config('moly.business.name', 'MOLLY KL HOME MASSAGE') . ', I would like to make an enquiry.';
         $msg = $message ?? $defaultMessage;
 
         $number = config('moly.business.whatsapp', '');

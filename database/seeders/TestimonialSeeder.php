@@ -36,7 +36,7 @@ class TestimonialSeeder extends Seeder
             ],
             [
                 'name' => 'Nur H.',
-                'content' => 'I have tried a few home massage services in KL and MOLY stands out for their punctuality and consistent quality. The body scrub followed by Balinese massage is my favourite combination.',
+                'content' => 'I have tried a few home massage services in KL and Molly KL Home Massage stands out for their punctuality and consistent quality. The body scrub followed by Balinese massage is my favourite combination.',
                 'rating' => 5,
                 'sort_order' => 5,
             ],

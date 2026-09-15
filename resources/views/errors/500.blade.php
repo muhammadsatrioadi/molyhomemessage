@@ -18,8 +18,7 @@
     <div class="error-page">
         <div class="container">
             <div class="error-brand">
-                <span class="brand-primary">MOLY</span>
-                <span class="brand-secondary">HOME MASSAGE</span>
+                @include('partials.brand-mark')
             </div>
             <div class="error-code">500</div>
             <h1 class="error-title">Something went wrong on our end.</h1>

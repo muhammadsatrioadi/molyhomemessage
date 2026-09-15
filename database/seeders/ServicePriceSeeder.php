@@ -11,7 +11,32 @@ class ServicePriceSeeder extends Seeder
     public function run(): void
     {
         $prices = [
+            'full-body-back-massage' => [
+                ['duration' => 60, 'price' => 130],
+                ['duration' => 90, 'price' => 190],
+                ['duration' => 120, 'price' => 230],
+            ],
+            'head-neck-massage' => [
+                ['duration' => 30, 'price' => 80],
+                ['duration' => 60, 'price' => 130],
+                ['duration' => 90, 'price' => 180],
+            ],
+            'traditional-massage' => [
+                ['duration' => 60, 'price' => 150],
+                ['duration' => 90, 'price' => 220],
+                ['duration' => 120, 'price' => 270],
+            ],
+            'aromatherapy-massage' => [
+                ['duration' => 60, 'price' => 160],
+                ['duration' => 90, 'price' => 230],
+                ['duration' => 120, 'price' => 280],
+            ],
             'balinese-massage' => [
+                ['duration' => 60, 'price' => 140],
+                ['duration' => 90, 'price' => 200],
+                ['duration' => 120, 'price' => 240],
+            ],
+            'swedish-massage' => [
                 ['duration' => 60, 'price' => 140],
                 ['duration' => 90, 'price' => 200],
                 ['duration' => 120, 'price' => 240],
@@ -36,8 +61,14 @@ class ServicePriceSeeder extends Seeder
                 ['duration' => 90, 'price' => 240],
                 ['duration' => 120, 'price' => 290],
             ],
+            'couples-shared-session' => [
+                ['duration' => 60, 'price' => 260],
+                ['duration' => 90, 'price' => 380],
+                ['duration' => 120, 'price' => 470],
+            ],
             'body-scrub' => [
                 ['duration' => 30, 'price' => 70],
+                ['duration' => 60, 'price' => 120],
             ],
         ];
 

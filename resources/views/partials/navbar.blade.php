@@ -1,8 +1,7 @@
 <nav id="moly-navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('home') }}" aria-label="MOLY HOME MASSAGE Home">
-            <span class="brand-primary">MOLY</span>
-            <span class="brand-secondary">HOME MASSAGE</span>
+        <a class="navbar-brand" href="{{ route('home') }}" aria-label="{{ config('moly.business.name') }} Home">
+            @include('partials.brand-mark')
         </a>
 
         <button class="navbar-toggler moly-toggler" type="button" data-bs-toggle="collapse"
@@ -39,19 +38,28 @@
                 </li>
             </ul>
 
-            <div class="d-flex align-items-center gap-2 gap-lg-3 ms-lg-3">
-                <div class="lang-switcher d-flex align-items-center small" role="group" aria-label="Language switcher">
-                    <a href="{{ route('language', ['locale' => 'en']) }}"
-                       class="lang-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">EN</a>
-                    <span class="lang-divider">|</span>
-                    <a href="{{ route('language', ['locale' => 'ms']) }}"
-                       class="lang-link {{ app()->getLocale() === 'ms' ? 'active' : '' }}">BM</a>
+            <div class="d-flex flex-column flex-lg-row align-items-stretch align-items-lg-center gap-2 gap-lg-3 ms-lg-3 navbar-right-stack">
+                <div class="navbar-no-sex-wrap d-flex justify-content-center justify-content-lg-start order-2 order-lg-0">
+                    <span class="no-sex-badge small d-inline-flex align-items-center">
+                        <i class="bi bi-shield-check me-1"></i>
+                        @lang('messages.policy.no_sex_short')
+                    </span>
                 </div>
-                <a href="#" class="btn btn-moly-gold book-nav-btn"
-                   data-bs-toggle="modal" data-bs-target="#bookingModal"
-                   aria-label="Book Now">
-                    @lang('messages.nav.book_now')
-                </a>
+                <div class="d-flex align-items-center justify-content-between justify-content-lg-start gap-2 gap-lg-3 order-1 order-lg-0">
+                    <div class="lang-switcher d-flex align-items-center small" role="group" aria-label="Language switcher">
+                        <a href="{{ route('language', ['locale' => 'en']) }}"
+                           class="lang-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">EN</a>
+                        <span class="lang-divider">|</span>
+                        <a href="{{ route('language', ['locale' => 'ms']) }}"
+                           class="lang-link {{ app()->getLocale() === 'ms' ? 'active' : '' }}">BM</a>
+                    </div>
+                    <a href="{{ whatsapp_contact_url() }}" target="_blank" rel="noopener noreferrer"
+                       class="btn btn-moly-gold book-nav-btn d-inline-flex align-items-center"
+                       aria-label="Book Now">
+                        <i class="bi bi-whatsapp me-1"></i>
+                        @lang('messages.nav.book_now')
+                    </a>
+                </div>
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@
 
                 <h2>1. Introduction</h2>
                 <p>
-                    MOLY HOME MASSAGE ("we", "us", or "our") is committed to protecting the privacy of our customers
+                    {{ config('moly.business.name') }} ("we", "us", or "our") is committed to protecting the privacy of our customers
                     and website visitors. This Privacy Policy explains how we collect, use, disclose, and safeguard
                     your information when you visit our website or use our massage booking services in Kuala Lumpur,
                     Malaysia.

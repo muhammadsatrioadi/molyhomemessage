@@ -18,7 +18,7 @@
 
                 <h2>1. Acceptance of Terms</h2>
                 <p>
-                    By accessing or using the MOLY HOME MASSAGE website, booking a service, or contacting our team,
+                    By accessing or using the {{ config('moly.business.name') }} website, booking a service, or contacting our team,
                     you agree to be bound by these Terms and Conditions. If you do not agree to any part of these
                     terms, please do not use our services.
                 </p>
@@ -29,7 +29,7 @@
 
                 <h2>2. Services Provided</h2>
                 <p>
-                    MOLY HOME MASSAGE offers professional outcall wellness and massage services delivered at the
+                    {{ config('moly.business.name') }} offers professional outcall wellness and massage services delivered at the
                     customer's home, hotel, apartment, or residence within selected areas of Kuala Lumpur. Our
                     services include:
                 </p>
@@ -109,13 +109,13 @@
                 <h2>10. Website Content</h2>
                 <ul>
                     <li>The content on our website is provided for general information purposes only. While we aim to keep information accurate and up to date, we do not guarantee the completeness or accuracy of any content.</li>
-                    <li>All brand names, logos, and original content are the property of MOLY HOME MASSAGE. Reproduction without permission is prohibited.</li>
+                    <li>All brand names, logos, and original content are the property of {{ config('moly.business.name') }}. Reproduction without permission is prohibited.</li>
                 </ul>
 
                 <h2>11. Intellectual Property</h2>
                 <p>
                     All intellectual property rights in the website design, text, images, branding, logos, and
-                    service descriptions are owned by or licensed to MOLY HOME MASSAGE. You may not reproduce,
+                    service descriptions are owned by or licensed to {{ config('moly.business.name') }}. You may not reproduce,
                     distribute, or create derivative works from any of our materials without prior written consent.
                 </p>
 
