@@ -7,25 +7,7 @@
         <div class="footer-image-overlay"></div>
     </div>
 
-    <div class="container pt-lg-0">
-        <div class="footer-cta-strip">
-            <div class="row align-items-center g-4">
-                <div class="col-lg-7">
-                    <h3 class="footer-cta-title font-display mb-2">@lang('messages.footer.cta_title')</h3>
-                    <p class="footer-cta-desc mb-0">@lang('messages.footer.cta_desc')</p>
-                </div>
-                <div class="col-lg-5 text-lg-end">
-                    <a href="{{ whatsapp_contact_url() }}" target="_blank" rel="noopener noreferrer"
-                       class="btn btn-whatsapp btn-lg footer-cta-btn d-inline-flex align-items-center">
-                        <i class="bi bi-whatsapp me-2"></i>
-                        @lang('messages.footer.cta_button')
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container footer-main-grid pb-4">
+    <div class="container footer-main-grid pt-lg-0 pb-4">
         <div class="row g-4 g-lg-5 mb-5">
             <div class="col-md-6 col-lg-3">
                 <div class="footer-brand-card h-100">
