@@ -25,9 +25,59 @@
     --moly-font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-* { box-sizing: border-box; }
+/* Mobile-specific fixes */
+* {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
 
-html { scroll-behavior: smooth; }
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -ms-user-drag: none;
+    user-drag: none;
+}
+
+/* Ensure icons display correctly on mobile */
+.bi {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    fill: currentColor;
+}
+
+/* Fix for mobile navigation and layout */
+.navbar {
+    position: relative !important;
+}
+
+.mobile-nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Ensure proper mobile text rendering */
+body {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
 
 body.moly-body {
     font-family: var(--moly-font-body);
@@ -36,7 +86,10 @@ body.moly-body {
     font-weight: 400;
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    width: 100%;
+    min-width: 320px;
 }
 
 body.moly-body,
