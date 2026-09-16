@@ -19,12 +19,6 @@
             </button>
         </div>
 
-        <button class="navbar-toggler moly-toggler d-none d-lg-block" type="button" data-bs-toggle="collapse"
-                data-bs-target="#molyNavMenu" aria-controls="molyNavMenu"
-                aria-expanded="false" aria-label="Toggle navigation">
-            <i class="bi bi-list"></i>
-        </button>
-
         <div class="collapse navbar-collapse" id="molyNavMenu">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">

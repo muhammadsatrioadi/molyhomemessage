@@ -1784,6 +1784,7 @@ body.moly-body {
         display: flex;
         align-items: center;
         gap: 0.75rem;
+        margin-left: auto;
     }
     .mobile-lang-switcher {
         display: flex;
@@ -1794,6 +1795,7 @@ body.moly-body {
         border: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 0.8rem;
         font-weight: 700;
+        white-space: nowrap;
     }
     .mobile-lang-switcher .lang-link {
         color: var(--moly-muted);
