@@ -122,7 +122,7 @@
     <div class="container">
         <div class="feature-split feature-hotel reveal">
             <div class="feature-split-image order-2 order-lg-1">
-                <img src="{{ asset('assets/images/section-hotel-room.jpg') }}"
+                <img src="{{ versioned_asset('assets/images/section-hotel-room.jpg') }}"
                      alt="Hotel room massage — professional in-room wellness service"
                      loading="lazy"
                      decoding="async">
@@ -171,7 +171,7 @@
                 </a>
             </div>
             <div class="feature-split-image order-2 order-lg-2">
-                <img src="{{ asset('assets/images/section-couples.jpg') }}"
+                <img src="{{ versioned_asset('assets/images/section-couples.jpg') }}"
                      alt="Couples and shared sessions — side-by-side professional massage"
                      loading="lazy"
                      decoding="async">
@@ -184,7 +184,7 @@
     <div class="container">
         <div class="feature-split feature-home reveal">
             <div class="feature-split-image order-2 order-lg-1">
-                <img src="{{ asset('assets/images/section-home-massage.jpg') }}"
+                <img src="{{ versioned_asset('assets/images/section-home-massage.jpg') }}"
                      alt="Home massage — therapist comes to your comfortable residence"
                      loading="lazy"
                      decoding="async">
@@ -343,7 +343,7 @@
             <div class="col-lg-6 reveal">
                 <div class="about-image-wrapper">
                     <div class="about-image-overlay"></div>
-                    <img src="{{ asset('assets/images/about-home.jpg') }}"
+                    <img src="{{ versioned_asset('assets/images/about-home.jpg') }}"
                          alt="Professional massage therapy environment — {{ config('moly.business.name') }}"
                          class="about-home-img"
                          loading="lazy"

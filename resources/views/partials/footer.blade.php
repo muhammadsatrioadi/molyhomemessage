@@ -1,6 +1,6 @@
 <footer class="moly-footer pt-5 pb-0">
     <div class="footer-image-strip d-none d-lg-block">
-        <img src="{{ asset('assets/images/section-footer-banner.jpg') }}"
+        <img src="{{ versioned_asset('assets/images/section-footer-banner.jpg') }}"
              alt="{{ config('moly.business.name') }} premium wellness banner"
              loading="lazy"
              decoding="async">

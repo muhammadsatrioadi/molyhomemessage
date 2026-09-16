@@ -35,7 +35,7 @@
             <div class="col-lg-6 reveal">
                 <div class="about-image-wrapper">
                     <div class="about-image-overlay"></div>
-                    <img src="{{ asset('assets/images/about-1.jpg') }}"
+                    <img src="{{ versioned_asset('assets/images/about-1.jpg') }}"
                          alt="Professional massage session — {{ config('moly.business.name') }}"
                          class="about-home-img" loading="lazy" decoding="async">
                 </div>
@@ -71,7 +71,7 @@
             <div class="col-lg-6 reveal">
                 <div class="about-image-wrapper about-image-wrapper-alt">
                     <div class="about-image-overlay"></div>
-                    <img src="{{ asset('assets/images/about-equipment.jpg') }}"
+                    <img src="{{ versioned_asset('assets/images/about-equipment.jpg') }}"
                          alt="{{ config('moly.business.name') }} — portable massage table and wellness setup"
                          class="about-home-img" loading="lazy" decoding="async">
                 </div>

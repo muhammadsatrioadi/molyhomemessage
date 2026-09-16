@@ -22,7 +22,7 @@
              class="card-img-top"
              loading="lazy"
              decoding="async"
-             onerror="this.onerror=null;this.src='{{ asset('assets/images/service-placeholder.jpg') }}';">
+             onerror="this.onerror=null;this.src='{{ versioned_asset('assets/images/service-placeholder.jpg') }}';">
         <div class="service-card-overlay"></div>
         <div class="service-category-tag {{ $cat['class'] }}">{{ $cat['label'] }}</div>
         @if($service->prices->count() > 0)

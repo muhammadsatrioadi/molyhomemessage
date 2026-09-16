@@ -14,7 +14,7 @@
     <meta property="og:type" content="{{ $seo['og_type'] ?? 'website' }}">
     <meta property="og:title" content="{{ $seo['og_title'] ?? config('moly.seo.default_title') }}">
     <meta property="og:description" content="{{ $seo['og_description'] ?? config('moly.seo.default_description') }}">
-    <meta property="og:image" content="{{ $seo['og_image'] ?? asset('/assets/images/og-image.jpg') }}">
+    <meta property="og:image" content="{{ $seo['og_image'] ?? versioned_asset('assets/images/og-image.jpg') }}">
     <meta property="og:url" content="{{ $seo['og_url'] ?? url('/') }}">
     <meta property="og:site_name" content="{{ config('moly.business.name') }}">
     <meta property="og:locale" content="{{ app()->getLocale() === 'ms' ? 'ms_MY' : 'en_MY' }}">
@@ -22,9 +22,9 @@
     <meta name="twitter:card" content="{{ $seo['twitter_card'] ?? 'summary_large_image' }}">
     <meta name="twitter:title" content="{{ $seo['twitter_title'] ?? config('moly.seo.default_title') }}">
     <meta name="twitter:description" content="{{ $seo['twitter_description'] ?? config('moly.seo.default_description') }}">
-    <meta name="twitter:image" content="{{ $seo['twitter_image'] ?? asset('/assets/images/og-image.jpg') }}">
+    <meta name="twitter:image" content="{{ $seo['twitter_image'] ?? versioned_asset('assets/images/og-image.jpg') }}">
 
-    <link rel="icon" type="image/svg+xml" href="{{ asset('/assets/images/favicon.svg') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ versioned_asset('assets/images/favicon.svg') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,9 +32,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous">
     <noscript>
-        <link rel="stylesheet" href="{{ asset('/assets/css/moly.css') }}" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ versioned_asset('assets/css/moly.css') }}" crossorigin="anonymous">
     </noscript>
-    <link rel="stylesheet" href="{{ asset('/assets/css/moly.css') }}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ versioned_asset('assets/css/moly.css') }}" crossorigin="anonymous">
 
     @if(isset($jsonLd) && isset($jsonLd['localBusiness']))
         <script type="application/ld+json">
@@ -77,7 +77,7 @@
         window.MOLY_WHATSAPP = "{{ config('moly.business.whatsapp', '') }}";
         window.MOLY_BUSINESS_NAME = @json(config('moly.business.name'));
     </script>
-    <script src="{{ asset('/assets/js/moly.js') }}"></script>
+    <script src="{{ versioned_asset('assets/js/moly.js') }}"></script>
 
     @yield('scripts')
 </body>

@@ -38,7 +38,7 @@ class Service extends Model
 
     public function getImageUrlAttribute(): string
     {
-        $placeholder = asset('assets/images/service-placeholder.jpg');
+        $placeholder = versioned_asset('assets/images/service-placeholder.jpg');
         $path = $this->image ?: '/assets/images/service-placeholder.jpg';
 
         if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
@@ -52,6 +52,6 @@ class Service extends Model
             return $placeholder;
         }
 
-        return asset($relative);
+        return versioned_asset($relative);
     }
 }
