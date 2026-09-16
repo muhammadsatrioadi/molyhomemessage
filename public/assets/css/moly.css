@@ -1988,7 +1988,7 @@ body.moly-body {
     .btn.btn-lg { padding: 0.9rem 2rem; }
     .booking-modal .modal-dialog { margin: 0.75rem; }
     .booking-form .row { gap: 1rem; }
-    .floating-whatsapp { width: 60px; height: 60px; font-size: 1.8rem; bottom: max(18px, env(safe-area-inset-bottom)); right: 18px; }
+    .floating-whatsapp { width: 60px; height: 60px; font-size: 1.8rem; bottom: calc(18px + env(safe-area-inset-bottom, 0px) + var(--wa-viewport-offset, 0px)); right: 18px; }
     .areas-cards-grid { grid-template-columns: 1fr 1fr; }
     .footer-brand-card { padding: 1.5rem; }
     .techniques-card-title { font-size: 1.08rem; }

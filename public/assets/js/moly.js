@@ -249,6 +249,27 @@
         }
     }
 
+    function updateFloatingWhatsAppPosition() {
+        var whatsapp = document.querySelector('.floating-whatsapp');
+        if (!whatsapp) return;
+
+        if (!window.visualViewport) {
+            whatsapp.style.removeProperty('--wa-viewport-offset');
+            return;
+        }
+
+        var layoutHeight = window.innerHeight;
+        var visualHeight = window.visualViewport.height;
+        var viewportDifference = Math.max(0, layoutHeight - visualHeight);
+        whatsapp.style.setProperty('--wa-viewport-offset', viewportDifference + 'px');
+    }
+
+    function initFloatingWhatsAppViewport() {
+        if (!window.visualViewport) return;
+        updateFloatingWhatsAppPosition();
+        window.visualViewport.addEventListener('resize', debounce(updateFloatingWhatsAppPosition, 50));
+    }
+
     function init() {
         handleNavbarScroll();
         window.addEventListener('scroll', debounce(handleNavbarScroll, 10), { passive: true });
@@ -258,6 +279,7 @@
         setWhatsAppGlobalFromDom();
         initBookingModal();
         initMobileInteractions();
+        initFloatingWhatsAppViewport();
 
         document.documentElement.setAttribute('data-js-ready', '1');
     }
