@@ -46,7 +46,7 @@ img {
     display: inline-block;
     width: 1em;
     height: 1em;
-    vertical-align: middle;
+    vertical-align: -0.125em;
     fill: currentColor;
 }
 
@@ -78,9 +78,9 @@ img {
     height: 1em;
 }
 
-/* Fix for icons in text containers */
-.bi {
-    vertical-align: baseline;
+/* Fix for icons in buttons and text containers */
+.btn .bi {
+    vertical-align: -0.125em;
 }
 
 /* Mobile-specific icon fixes */
