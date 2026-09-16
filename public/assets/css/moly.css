@@ -46,8 +46,64 @@ img {
     display: inline-block;
     width: 1em;
     height: 1em;
-    vertical-align: -0.125em;
+    vertical-align: middle;
     fill: currentColor;
+}
+
+/* Fix icon alignment in containers */
+.hero-meta-icon,
+.trust-icon,
+.why-icon,
+.techniques-card-icon,
+.area-card-icon,
+.feature-split-label-icon,
+.feature-checklist-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Ensure icons inside flex containers are properly aligned */
+.hero-meta-icon i,
+.trust-icon i,
+.why-icon i,
+.techniques-card-icon i,
+.area-card-icon i,
+.feature-split-label-icon i,
+.feature-checklist-icon i {
+    display: block;
+    line-height: 1;
+    width: 1em;
+    height: 1em;
+}
+
+/* Fix for icons in text containers */
+.bi {
+    vertical-align: baseline;
+}
+
+/* Mobile-specific icon fixes */
+@media (max-width: 767.98px) {
+    .hero-meta-item {
+        align-items: flex-start;
+    }
+    
+    .hero-meta-icon {
+        margin-top: 0.2rem;
+    }
+    
+    .trust-icon {
+        margin-bottom: 0.5rem;
+    }
+    
+    .why-icon {
+        margin-bottom: 0.75rem;
+    }
+    
+    .techniques-card-icon {
+        margin-bottom: 0.5rem;
+    }
 }
 
 /* Fix for mobile navigation and layout */
@@ -475,7 +531,7 @@ body.moly-body {
 }
 .hero-meta-item {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.85rem;
 }
 .hero-meta-icon {
@@ -1975,6 +2031,7 @@ body.moly-body {
         opacity: 1 !important;
         transform: none !important;
     }
-    .hero-background,
-    @keyframes heroZoom { animation: none !important; }
+    .hero-background {
+        animation: none !important;
+    }
 }
