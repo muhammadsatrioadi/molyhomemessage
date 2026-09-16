@@ -6,7 +6,6 @@
                 aria-expanded="false"
                 aria-controls="faqCollapse-{{ $index }}">
             <span class="faq-question">{{ $faq->localized_question }}</span>
-            <i class="bi bi-plus-lg faq-icon-plus"></i>
             <i class="bi bi-dash-lg faq-icon-minus"></i>
         </button>
     </h3>
