@@ -362,6 +362,9 @@ body.moly-body {
     display: inline-flex;
     align-items: center;
     gap: 0.7rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
 }
 .gold-badge-dot {
     width: 7px; height: 7px;
@@ -378,6 +381,9 @@ body.moly-body {
     color: var(--moly-white);
     max-width: 18ch;
     font-family: var(--moly-font-display);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
 
 .hero-headline em {
@@ -1772,6 +1778,34 @@ body.moly-body {
     .feature-split-text-card { padding: 2.5rem 1.8rem; }
     .cta-wrapper { padding: 3.5rem 1.8rem; }
     .areas-cards-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
+
+    /* Mobile language selector next to hamburger */
+    .mobile-nav-controls {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    .mobile-lang-switcher {
+        display: flex;
+        align-items: center;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+    .mobile-lang-switcher .lang-link {
+        color: var(--moly-muted);
+        text-decoration: none;
+        padding: 0 2px;
+    }
+    .mobile-lang-switcher .lang-link:hover { color: var(--moly-gold-light); }
+    .mobile-lang-switcher .lang-link.active { color: var(--moly-gold); }
+    .mobile-lang-switcher .lang-divider {
+        color: rgba(167, 167, 167, 0.4);
+        margin: 0 4px;
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -1792,6 +1826,27 @@ body.moly-body {
     }
     .hero-meta-item { flex-direction: column; gap: 0.5rem; }
     .areas-cards-grid { grid-template-columns: repeat(2, 1fr); }
+
+    /* Fix text truncation on mobile */
+    .gold-badge {
+        font-size: 0.7rem;
+        padding: 0.5rem 1rem;
+        letter-spacing: 0.15em;
+        white-space: normal;
+        line-height: 1.4;
+        text-align: center;
+    }
+    .hero-headline {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    .hero-subheadline {
+        max-width: 100%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -1806,6 +1861,22 @@ body.moly-body {
     .feature-checklist { grid-template-columns: 1fr; }
     .hero-meta-row { grid-template-columns: 1fr; }
     .hero-meta-item { flex-direction: row; align-items: center; }
+
+    /* Fix hero badge text truncation on small mobile */
+    .gold-badge {
+        font-size: 0.65rem;
+        padding: 0.45rem 0.8rem;
+        letter-spacing: 0.12em;
+        white-space: normal;
+        line-height: 1.3;
+        text-align: center;
+        max-width: 100%;
+    }
+    .hero-label {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -4,7 +4,22 @@
             @include('partials.brand-mark')
         </a>
 
-        <button class="navbar-toggler moly-toggler" type="button" data-bs-toggle="collapse"
+        <div class="mobile-nav-controls d-lg-none">
+            <div class="mobile-lang-switcher">
+                <a href="{{ route('language', ['locale' => 'en']) }}"
+                   class="lang-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">EN</a>
+                <span class="lang-divider">|</span>
+                <a href="{{ route('language', ['locale' => 'ms']) }}"
+                   class="lang-link {{ app()->getLocale() === 'ms' ? 'active' : '' }}">BM</a>
+            </div>
+            <button class="navbar-toggler moly-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#molyNavMenu" aria-controls="molyNavMenu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+        </div>
+
+        <button class="navbar-toggler moly-toggler d-none d-lg-block" type="button" data-bs-toggle="collapse"
                 data-bs-target="#molyNavMenu" aria-controls="molyNavMenu"
                 aria-expanded="false" aria-label="Toggle navigation">
             <i class="bi bi-list"></i>
@@ -46,7 +61,7 @@
                     </span>
                 </div>
                 <div class="d-flex align-items-center justify-content-between justify-content-lg-start gap-2 gap-lg-3 order-1 order-lg-0">
-                    <div class="lang-switcher d-flex align-items-center small" role="group" aria-label="Language switcher">
+                    <div class="lang-switcher d-flex align-items-center small d-none d-lg-flex" role="group" aria-label="Language switcher">
                         <a href="{{ route('language', ['locale' => 'en']) }}"
                            class="lang-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">EN</a>
                         <span class="lang-divider">|</span>
