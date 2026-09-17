@@ -3,11 +3,11 @@
 return [
     'brand' => [
         'primary' => 'MOLLY',
-        'secondary' => 'KL HOME MASSAGE',
+        'secondary' => 'KL OUTCALL MASSAGE',
     ],
 
     'business' => [
-        'name' => env('APP_NAME', 'MOLLY KL HOME MASSAGE'),
+        'name' => env('APP_NAME', 'MOLLY KL OUTCALL MASSAGE'),
         'tagline' => 'Premium Massage, Wherever You Are',
         'location' => 'Kuala Lumpur, Malaysia',
         'whatsapp' => env('MOLY_WHATSAPP'),
@@ -33,13 +33,13 @@ return [
     ],
 
     'site' => [
-        'description' => 'Professional home and hotel massage service in Kuala Lumpur. Book your massage directly via WhatsApp.',
-        'keywords' => 'home massage, hotel massage, outcall massage, kuala lumpur massage, balinese massage, deep tissue, thai massage, foot massage',
+        'description' => 'Professional outcall massage service across Kuala Lumpur. Therapist travels to your hotel, residence, apartment or preferred location. Book directly via WhatsApp.',
+        'keywords' => 'outcall massage, kuala lumpur outcall massage, hotel massage, balinese massage, deep tissue, thai massage, foot massage, hot stone, prenatal massage, postnatal massage, body scrub, lomi lomi',
     ],
 
     'seo' => [
-        'default_title' => 'MOLLY KL HOME MASSAGE | Home & Hotel Massage Kuala Lumpur',
-        'default_description' => 'Professional home and hotel massage service in Kuala Lumpur. Book your massage directly via WhatsApp.',
+        'default_title' => 'MOLLY KL OUTCALL MASSAGE | Outcall Massage Kuala Lumpur',
+        'default_description' => 'Professional outcall massage service across Kuala Lumpur. Therapist travels to your hotel, residence, apartment or preferred location. Book directly via WhatsApp.',
         'robots' => 'index, follow',
         'og_type' => 'website',
         'og_image' => '/assets/images/og-image.jpg',

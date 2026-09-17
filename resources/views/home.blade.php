@@ -139,7 +139,7 @@
                         <li><span class="check-dot"><i class="bi bi-check"></i></span>{{ $item }}</li>
                     @endforeach
                 </ul>
-                <a href="{{ whatsapp_contact_url('Hotel Room Massage — Hello ' . config('moly.business.name') . ', I would like to book a hotel room massage.') }}"
+                <a href="{{ whatsapp_contact_url('Hotel Room Outcall — Hello ' . config('moly.business.name') . ', I would like to book an outcall massage at my hotel.') }}"
                    target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp d-inline-flex align-items-center">
                     <i class="bi bi-whatsapp me-2"></i>
                     @lang('messages.hero.cta_whatsapp')
@@ -164,7 +164,7 @@
                         <li><span class="check-dot"><i class="bi bi-check"></i></span>{{ $item }}</li>
                     @endforeach
                 </ul>
-                <a href="{{ whatsapp_contact_url('Couples Shared Session — Hello ' . config('moly.business.name') . ', I would like to book a couples/shared session.') }}"
+                <a href="{{ whatsapp_contact_url('Couples Shared Outcall — Hello ' . config('moly.business.name') . ', I would like to book a couples/shared outcall session.') }}"
                    target="_blank" rel="noopener noreferrer" class="btn btn-moly-gold d-inline-flex align-items-center">
                     <i class="bi bi-calendar2-heart me-2"></i>
                     @lang('messages.nav.book_now')
@@ -201,7 +201,7 @@
                         <li><span class="check-dot"><i class="bi bi-check"></i></span>{{ $item }}</li>
                     @endforeach
                 </ul>
-                <a href="{{ whatsapp_contact_url('Home Massage — Hello ' . config('moly.business.name') . ', I would like to book a home massage.') }}"
+                <a href="{{ whatsapp_contact_url('Residence Outcall — Hello ' . config('moly.business.name') . ', I would like to book an outcall massage at my residence or apartment.') }}"
                    target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp d-inline-flex align-items-center">
                     <i class="bi bi-whatsapp me-2"></i>
                     @lang('messages.hero.cta_whatsapp')

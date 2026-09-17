@@ -9,12 +9,15 @@ use App\Models\Faq;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Collection;
+use stdClass;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        $services = Service::with('prices')->active()->get();
+        $baseServices = Service::with('prices')->active()->get();
+        $services = $this->buildTreatments($baseServices);
         $areas = ServiceArea::active()->get();
         $testimonials = Testimonial::active()->get();
         $faqs = Faq::active()->get();
@@ -42,21 +45,24 @@ class HomeController extends Controller
 
     public function services()
     {
-        $services = Service::with('prices')->active()->get();
+        $baseServices = Service::with('prices')->active()->get();
+        $services = $this->buildTreatments($baseServices);
+
+        $seoDescription = config('moly.business.name') . ' offers nine premium outcall massage treatments: Deep Tissue, Balinese Massage, Foot Massage, Hot Stone, Postnatal, Prenatal, Body Scrub, Lomi-Lomi and Thai Massage across Kuala Lumpur.';
 
         $seo = [
             'title' => __('messages.services.title') . ' | ' . config('moly.business.name'),
-            'description' => 'Discover our premium massage services including Balinese, Deep Tissue, Thai, Foot Massage and Body Scrub in Kuala Lumpur.',
+            'description' => $seoDescription,
             'robots' => 'index, follow',
             'canonical' => route('services'),
             'og_type' => 'website',
             'og_title' => __('messages.services.title') . ' | ' . config('moly.business.name'),
-            'og_description' => 'Discover our premium massage services including Balinese, Deep Tissue, Thai, Foot Massage and Body Scrub in Kuala Lumpur.',
+            'og_description' => $seoDescription,
             'og_image' => asset('/assets/images/og-image.jpg'),
             'og_url' => route('services'),
             'twitter_card' => 'summary_large_image',
             'twitter_title' => __('messages.services.title') . ' | ' . config('moly.business.name'),
-            'twitter_description' => 'Discover our premium massage services including Balinese, Deep Tissue, Thai, Foot Massage and Body Scrub in Kuala Lumpur.',
+            'twitter_description' => $seoDescription,
             'twitter_image' => asset('/assets/images/og-image.jpg'),
         ];
 
@@ -65,19 +71,21 @@ class HomeController extends Controller
 
     public function about()
     {
+        $seoDescription = config('moly.business.name') . ' provides premium outcall massage services across Kuala Lumpur. Therapist travels to your hotel, residence, apartment or preferred location — making professional relaxation more accessible.';
+
         $seo = [
             'title' => __('messages.nav.about') . ' | ' . config('moly.business.name'),
-            'description' => config('moly.business.name') . ' provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
+            'description' => $seoDescription,
             'robots' => 'index, follow',
             'canonical' => route('about'),
             'og_type' => 'website',
             'og_title' => __('messages.nav.about') . ' | ' . config('moly.business.name'),
-            'og_description' => config('moly.business.name') . ' provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
+            'og_description' => $seoDescription,
             'og_image' => asset('/assets/images/og-image.jpg'),
             'og_url' => route('about'),
             'twitter_card' => 'summary_large_image',
             'twitter_title' => __('messages.nav.about') . ' | ' . config('moly.business.name'),
-            'twitter_description' => config('moly.business.name') . ' provides convenient home and hotel massage services for customers across selected areas of Kuala Lumpur.',
+            'twitter_description' => $seoDescription,
             'twitter_image' => asset('/assets/images/og-image.jpg'),
         ];
 
@@ -187,6 +195,87 @@ class HomeController extends Controller
             'canonical' => route('terms'),
         ];
         return view('terms', compact('seo'));
+    }
+
+    private function buildTreatments(Collection $baseServices): Collection
+    {
+        $order = __('messages.services.order');
+        $descriptions = __('messages.services.descriptions');
+        $placeholderUrl = versioned_asset('assets/images/service-placeholder.jpg');
+
+        $result = collect();
+
+        foreach ($order as $sortIndex => $treatmentName) {
+            $matched = $baseServices->first(function ($svc) use ($treatmentName) {
+                $dbName = mb_strtolower(trim((string)$svc->name));
+                $target = mb_strtolower(trim((string)$treatmentName));
+
+                if ($dbName === $target) return true;
+                if ($target !== '' && str_contains($dbName, $target)) return true;
+
+                if (str_contains($target, ' ')) {
+                    $targetWords = preg_split('/\s+/', $target);
+                    $allPresent = true;
+                    foreach ($targetWords as $w) {
+                        $w = trim((string)$w);
+                        if ($w === '') continue;
+                        if (!str_contains($dbName, mb_strtolower($w))) {
+                            $allPresent = false;
+                            break;
+                        }
+                    }
+                    if ($allPresent) return true;
+                }
+
+                return false;
+            });
+
+            $obj = new stdClass();
+            $obj->sort_order = $sortIndex + 1;
+            $obj->is_active = true;
+            $obj->name = $treatmentName;
+            $slugRaw = preg_replace('/[^A-Za-z0-9]+/', '-', trim((string)$treatmentName));
+            $obj->slug = strtolower(trim((string)$slugRaw, '-'));
+            $obj->description = $descriptions[$treatmentName] ?? '';
+
+            if ($matched) {
+                $obj->id = $matched->id ?? null;
+                $obj->image = $matched->image ?? '';
+                $obj->prices = $matched->prices instanceof Collection
+                    ? $matched->prices
+                    : new Collection();
+            } else {
+                $obj->id = null;
+                $obj->image = '';
+                $obj->prices = new Collection();
+            }
+
+            if ($obj->prices instanceof Collection && $obj->prices->count() > 0) {
+                $min = $obj->prices->min('price');
+                $obj->lowest_price = is_numeric($min) ? (float)$min : 0.0;
+            } else {
+                $obj->lowest_price = 0.0;
+            }
+
+            $path = trim((string)($obj->image ?? ''));
+            if ($path !== '' && (str_starts_with($path, 'http://') || str_starts_with($path, 'https://'))) {
+                $obj->image_url = $path;
+            } elseif ($path !== '') {
+                $relative = ltrim($path, '/');
+                $publicPath = public_path($relative);
+                if (@is_file($publicPath) && @filesize($publicPath) >= 5000) {
+                    $obj->image_url = versioned_asset($relative);
+                } else {
+                    $obj->image_url = $placeholderUrl;
+                }
+            } else {
+                $obj->image_url = $placeholderUrl;
+            }
+
+            $result->push($obj);
+        }
+
+        return $result;
     }
 
     private function buildJsonLd($services, $faqs): array
