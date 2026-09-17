@@ -1608,6 +1608,10 @@ body.moly-body {
     border: 2px solid rgba(255,255,255,0.15);
 }
 .floating-whatsapp:hover { transform: scale(1.08); color: #fff; }
+.floating-whatsapp i {
+    display: block;
+    line-height: 1;
+}
 @keyframes pulse-wa {
     0%, 100% { box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45); }
     50% { box-shadow: 0 14px 40px rgba(37, 211, 102, 0.6); transform: scale(1.03); }
