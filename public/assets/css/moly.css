@@ -1993,16 +1993,15 @@ body.moly-body {
         height: 60px;
         font-size: 1.8rem;
         right: 18px;
-        /* Fallback before/without Visual Viewport JS */
-        bottom: max(18px, env(safe-area-inset-bottom, 0px));
         top: auto;
+        /* Base gap; JS measure-and-correct lifts further when needed */
+        bottom: max(18px, env(safe-area-inset-bottom, 0px));
     }
 
-    @supports (height: 100dvh) {
+    @supports (height: 100dvh) and (height: 100lvh) {
         .floating-whatsapp {
-            /* Prefer dynamic viewport so browser chrome cannot clip the button */
-            bottom: auto;
-            top: calc(100dvh - 60px - max(18px, env(safe-area-inset-bottom, 0px)));
+            /* Lift by browser-chrome delta (layout viewport vs dynamic viewport) */
+            bottom: calc(max(18px, env(safe-area-inset-bottom, 0px)) + (100lvh - 100dvh));
         }
     }
     .areas-cards-grid { grid-template-columns: 1fr 1fr; }

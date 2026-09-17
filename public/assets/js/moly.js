@@ -280,9 +280,6 @@
         var whatsapp = document.querySelector('.floating-whatsapp');
         if (!whatsapp) return;
 
-        // Chrome Android often reports innerHeight === visualViewport.height while
-        // position:fixed still anchors to the larger layout viewport. Positioning with
-        // visualViewport top/height avoids that false-zero offset.
         if (!window.visualViewport || !floatingWhatsAppMobileQuery.matches) {
             clearFloatingWhatsAppInlinePosition(whatsapp);
             return;
@@ -290,11 +287,20 @@
 
         var vv = window.visualViewport;
         var gap = Math.max(18, getFloatingWhatsAppSafeBottom());
-        var height = whatsapp.offsetHeight || 60;
-        var top = Math.round(vv.offsetTop + vv.height - height - gap);
 
-        whatsapp.style.setProperty('top', top + 'px');
-        whatsapp.style.setProperty('bottom', 'auto');
+        // Anchor with bottom (keeps pulse animation transform intact), then
+        // measure-and-correct against the visual viewport. This avoids relying on
+        // whether position:fixed / getBoundingClientRect use layout or visual coords.
+        whatsapp.style.setProperty('top', 'auto');
+        whatsapp.style.setProperty('bottom', gap + 'px');
+
+        var rect = whatsapp.getBoundingClientRect();
+        var desiredBottom = vv.height - gap;
+        var overflow = rect.bottom - desiredBottom;
+
+        if (Math.abs(overflow) > 0.5) {
+            whatsapp.style.setProperty('bottom', Math.round(gap + overflow) + 'px');
+        }
     }
 
     function scheduleFloatingWhatsAppPositionUpdate() {
@@ -314,6 +320,7 @@
         window.visualViewport.addEventListener('resize', scheduleFloatingWhatsAppPositionUpdate);
         window.visualViewport.addEventListener('scroll', scheduleFloatingWhatsAppPositionUpdate);
         window.addEventListener('orientationchange', scheduleFloatingWhatsAppPositionUpdate);
+        window.addEventListener('resize', scheduleFloatingWhatsAppPositionUpdate);
 
         if (typeof floatingWhatsAppMobileQuery.addEventListener === 'function') {
             floatingWhatsAppMobileQuery.addEventListener('change', scheduleFloatingWhatsAppPositionUpdate);
