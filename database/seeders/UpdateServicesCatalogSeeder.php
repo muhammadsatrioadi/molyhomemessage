@@ -35,21 +35,21 @@ class UpdateServicesCatalogSeeder extends Seeder
                 'name' => 'Hot Stone',
                 'slug' => 'hot-stone',
                 'description' => 'A warming relaxation treatment using smooth, heated basalt stones placed along key muscle areas and used during massage strokes. The gentle heat helps loosen tight muscles, ease stress, and create a deeply calming experience.',
-                'image' => '/assets/images/service-hot-stone.jpg',
+                'image' => '/assets/images/hot-stone-massage.jpg',
                 'sort_order' => 4,
             ],
             [
                 'name' => 'Postnatal Massage',
                 'slug' => 'postnatal-massage',
                 'description' => 'A gentle, nurturing massage designed for mothers after childbirth. Delivered with care and comfortable positioning to help relieve post-birth muscle tension, improve circulation, and support general wellbeing. Always consult your healthcare provider before your first postnatal session.',
-                'image' => '/assets/images/service-postnatal.jpg',
+                'image' => '/assets/images/service-Postnatal Massage.jpg',
                 'sort_order' => 5,
             ],
             [
                 'name' => 'Prenatal Massage',
                 'slug' => 'prenatal-massage',
                 'description' => 'A soft, safe massage for expecting mothers using supportive side-lying positioning and light to moderate pressure. Helps relieve common pregnancy discomfort such as lower back tension while supporting calm and rest. Subject to your doctor or midwife approval.',
-                'image' => '/assets/images/service-prenatal.jpg',
+                'image' => '/assets/images/Prenatal Massage.jpg',
                 'sort_order' => 6,
             ],
             [
@@ -63,7 +63,7 @@ class UpdateServicesCatalogSeeder extends Seeder
                 'name' => 'Lomi-Lomi Massage',
                 'slug' => 'lomi-lomi-massage',
                 'description' => 'A Hawaiian-inspired relaxation treatment characterised by long, flowing, rhythmic strokes across the body. Designed to encourage deep relaxation, release stress, and create a nurturing, uninterrupted wellness experience.',
-                'image' => '/assets/images/service-lomi-lomi.jpg',
+                'image' => '/assets/images/service-lomi.jpg',
                 'sort_order' => 8,
             ],
             [

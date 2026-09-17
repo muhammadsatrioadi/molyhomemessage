@@ -203,6 +203,18 @@ class HomeController extends Controller
         $descriptions = __('messages.services.descriptions');
         $placeholderUrl = versioned_asset('assets/images/service-placeholder.jpg');
 
+        $defaultImages = [
+            'Deep Tissue'       => '/assets/images/service-deep-tissue.jpg',
+            'Balinese Massage'  => '/assets/images/service-balinese.jpg',
+            'Foot Massage'      => '/assets/images/service-foot-standard.jpg',
+            'Hot Stone'         => '/assets/images/hot-stone-massage.jpg',
+            'Postnatal Massage' => '/assets/images/service-Postnatal Massage.jpg',
+            'Prenatal Massage'  => '/assets/images/Prenatal Massage.jpg',
+            'Body Scrub'        => '/assets/images/service-body-scrub.jpg',
+            'Lomi-Lomi Massage' => '/assets/images/service-lomi.jpg',
+            'Thai Massage'      => '/assets/images/service-thai.jpg',
+        ];
+
         $result = collect();
 
         foreach ($order as $sortIndex => $treatmentName) {
@@ -238,15 +250,21 @@ class HomeController extends Controller
             $obj->slug = strtolower(trim((string)$slugRaw, '-'));
             $obj->description = $descriptions[$treatmentName] ?? '';
 
+            if (isset($defaultImages[$treatmentName])) {
+                $obj->image = $defaultImages[$treatmentName];
+            } elseif ($matched) {
+                $obj->image = $matched->image ?? '';
+            } else {
+                $obj->image = '';
+            }
+
             if ($matched) {
                 $obj->id = $matched->id ?? null;
-                $obj->image = $matched->image ?? '';
                 $obj->prices = $matched->prices instanceof Collection
                     ? $matched->prices
                     : new Collection();
             } else {
                 $obj->id = null;
-                $obj->image = '';
                 $obj->prices = new Collection();
             }
 
