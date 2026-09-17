@@ -1611,6 +1611,7 @@ body.moly-body {
 .floating-whatsapp i {
     display: block;
     line-height: 1;
+    vertical-align: 0;
 }
 @keyframes pulse-wa {
     0%, 100% { box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45); }
