@@ -250,35 +250,75 @@
     }
 
     var floatingWhatsAppMobileQuery = window.matchMedia('(max-width: 767.98px)');
+    var floatingWhatsAppSafeBottom = null;
+    var floatingWhatsAppFramePending = false;
+
+    function getFloatingWhatsAppSafeBottom() {
+        if (floatingWhatsAppSafeBottom !== null) return floatingWhatsAppSafeBottom;
+
+        floatingWhatsAppSafeBottom = 0;
+        try {
+            var probe = document.createElement('div');
+            probe.style.cssText = 'position:absolute;visibility:hidden;pointer-events:none;padding-bottom:env(safe-area-inset-bottom,0px);';
+            document.body.appendChild(probe);
+            floatingWhatsAppSafeBottom = parseFloat(window.getComputedStyle(probe).paddingBottom) || 0;
+            document.body.removeChild(probe);
+        } catch (e) {
+            floatingWhatsAppSafeBottom = 0;
+        }
+
+        return floatingWhatsAppSafeBottom;
+    }
+
+    function clearFloatingWhatsAppInlinePosition(whatsapp) {
+        whatsapp.style.removeProperty('top');
+        whatsapp.style.removeProperty('bottom');
+        whatsapp.style.removeProperty('--wa-viewport-offset');
+    }
 
     function updateFloatingWhatsAppPosition() {
         var whatsapp = document.querySelector('.floating-whatsapp');
         if (!whatsapp) return;
 
+        // Chrome Android often reports innerHeight === visualViewport.height while
+        // position:fixed still anchors to the larger layout viewport. Positioning with
+        // visualViewport top/height avoids that false-zero offset.
         if (!window.visualViewport || !floatingWhatsAppMobileQuery.matches) {
-            whatsapp.style.removeProperty('--wa-viewport-offset');
+            clearFloatingWhatsAppInlinePosition(whatsapp);
             return;
         }
 
         var vv = window.visualViewport;
-        var viewportOffset = Math.max(0, window.innerHeight - vv.offsetTop - vv.height);
-        whatsapp.style.setProperty('--wa-viewport-offset', viewportOffset + 'px');
+        var gap = Math.max(18, getFloatingWhatsAppSafeBottom());
+        var height = whatsapp.offsetHeight || 60;
+        var top = Math.round(vv.offsetTop + vv.height - height - gap);
+
+        whatsapp.style.setProperty('top', top + 'px');
+        whatsapp.style.setProperty('bottom', 'auto');
+    }
+
+    function scheduleFloatingWhatsAppPositionUpdate() {
+        if (floatingWhatsAppFramePending) return;
+        floatingWhatsAppFramePending = true;
+        window.requestAnimationFrame(function () {
+            floatingWhatsAppFramePending = false;
+            updateFloatingWhatsAppPosition();
+        });
     }
 
     function initFloatingWhatsAppViewport() {
         if (!window.visualViewport) return;
 
-        var debouncedUpdate = debounce(updateFloatingWhatsAppPosition, 50);
         updateFloatingWhatsAppPosition();
 
-        window.visualViewport.addEventListener('resize', debouncedUpdate);
-        window.visualViewport.addEventListener('scroll', debouncedUpdate);
-        window.addEventListener('orientationchange', debouncedUpdate);
+        window.visualViewport.addEventListener('resize', scheduleFloatingWhatsAppPositionUpdate);
+        window.visualViewport.addEventListener('scroll', scheduleFloatingWhatsAppPositionUpdate);
+        window.addEventListener('orientationchange', scheduleFloatingWhatsAppPositionUpdate);
 
         if (typeof floatingWhatsAppMobileQuery.addEventListener === 'function') {
-            floatingWhatsAppMobileQuery.addEventListener('change', debouncedUpdate);
+            floatingWhatsAppMobileQuery.addEventListener('change', scheduleFloatingWhatsAppPositionUpdate);
         } else if (typeof floatingWhatsAppMobileQuery.addListener === 'function') {
-            floatingWhatsAppMobileQuery.addListener(debouncedUpdate);
+            floatingWhatsAppMobileQuery.addListener(scheduleFloatingWhatsAppPositionUpdate);
         }
     }
 
