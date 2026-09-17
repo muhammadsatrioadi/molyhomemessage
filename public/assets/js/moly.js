@@ -249,25 +249,37 @@
         }
     }
 
+    var floatingWhatsAppMobileQuery = window.matchMedia('(max-width: 767.98px)');
+
     function updateFloatingWhatsAppPosition() {
         var whatsapp = document.querySelector('.floating-whatsapp');
         if (!whatsapp) return;
 
-        if (!window.visualViewport) {
+        if (!window.visualViewport || !floatingWhatsAppMobileQuery.matches) {
             whatsapp.style.removeProperty('--wa-viewport-offset');
             return;
         }
 
-        var layoutHeight = window.innerHeight;
-        var visualHeight = window.visualViewport.height;
-        var viewportDifference = Math.max(0, layoutHeight - visualHeight);
-        whatsapp.style.setProperty('--wa-viewport-offset', viewportDifference + 'px');
+        var vv = window.visualViewport;
+        var viewportOffset = Math.max(0, window.innerHeight - vv.offsetTop - vv.height);
+        whatsapp.style.setProperty('--wa-viewport-offset', viewportOffset + 'px');
     }
 
     function initFloatingWhatsAppViewport() {
         if (!window.visualViewport) return;
+
+        var debouncedUpdate = debounce(updateFloatingWhatsAppPosition, 50);
         updateFloatingWhatsAppPosition();
-        window.visualViewport.addEventListener('resize', debounce(updateFloatingWhatsAppPosition, 50));
+
+        window.visualViewport.addEventListener('resize', debouncedUpdate);
+        window.visualViewport.addEventListener('scroll', debouncedUpdate);
+        window.addEventListener('orientationchange', debouncedUpdate);
+
+        if (typeof floatingWhatsAppMobileQuery.addEventListener === 'function') {
+            floatingWhatsAppMobileQuery.addEventListener('change', debouncedUpdate);
+        } else if (typeof floatingWhatsAppMobileQuery.addListener === 'function') {
+            floatingWhatsAppMobileQuery.addListener(debouncedUpdate);
+        }
     }
 
     function init() {
