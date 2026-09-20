@@ -204,14 +204,14 @@ class HomeController extends Controller
         $placeholderUrl = versioned_asset('assets/images/service-placeholder.jpg');
 
         $defaultImages = [
-            'Deep Tissue'       => '/assets/images/service-deep-tissue.jpg',
+            'Deep Tissue'       => '/assets/images/service-lomi.jpg',
             'Balinese Massage'  => '/assets/images/service-balinese.jpg',
             'Foot Massage'      => '/assets/images/service-foot-standard.jpg',
             'Hot Stone'         => '/assets/images/hot-stone-massage.jpg',
             'Postnatal Massage' => '/assets/images/service-Postnatal Massage.jpg',
             'Prenatal Massage'  => '/assets/images/Prenatal Massage.jpg',
             'Body Scrub'        => '/assets/images/service-body-scrub.jpg',
-            'Lomi-Lomi Massage' => '/assets/images/service-lomi.jpg',
+            'Lomi-Lomi Massage' => '/assets/images/service-deep-tissue.jpg',
             'Thai Massage'      => '/assets/images/service-thai.jpg',
         ];
 

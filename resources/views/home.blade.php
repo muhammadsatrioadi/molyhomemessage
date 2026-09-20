@@ -288,46 +288,37 @@
         <div class="mb-5 mb-lg-6 reveal">
             <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_klcc_title')</h3>
             <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_klcc_desc')</p>
-            <div class="areas-cards-grid">
+            <ul class="areas-list">
                 @foreach($klcc as $name)
                     @if(isset($areasByName[$name]))
-                        <div class="area-card">
-                            <span class="area-card-icon"><i class="bi bi-buildings"></i></span>
-                            <span class="area-card-name">{{ $areasByName[$name]->name }}</span>
-                        </div>
+                        <li class="area-list-item">{{ $areasByName[$name]->name }}</li>
                     @endif
                 @endforeach
-            </div>
+            </ul>
         </div>
 
         <div class="mb-5 mb-lg-6 reveal-delay-1">
             <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_fringe_title')</h3>
             <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_fringe_desc')</p>
-            <div class="areas-cards-grid">
+            <ul class="areas-list">
                 @foreach($fringe as $name)
                     @if(isset($areasByName[$name]))
-                        <div class="area-card">
-                            <span class="area-card-icon"><i class="bi bi-tree"></i></span>
-                            <span class="area-card-name">{{ $areasByName[$name]->name }}</span>
-                        </div>
+                        <li class="area-list-item">{{ $areasByName[$name]->name }}</li>
                     @endif
                 @endforeach
-            </div>
+            </ul>
         </div>
 
         <div class="reveal-delay-2">
             <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_greater_title')</h3>
             <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_greater_desc')</p>
-            <div class="areas-cards-grid">
+            <ul class="areas-list">
                 @foreach($greater as $name)
                     @if(isset($areasByName[$name]))
-                        <div class="area-card">
-                            <span class="area-card-icon"><i class="bi bi-geo-fill"></i></span>
-                            <span class="area-card-name">{{ $areasByName[$name]->name }}</span>
-                        </div>
+                        <li class="area-list-item">{{ $areasByName[$name]->name }}</li>
                     @endif
                 @endforeach
-            </div>
+            </ul>
         </div>
 
         <p class="areas-note text-center mt-5 mt-lg-6 mb-0">
