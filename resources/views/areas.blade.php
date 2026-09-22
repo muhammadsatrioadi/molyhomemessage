@@ -3,9 +3,9 @@
 @section('content')
 
 @php
-    $klcc = ['KLCC', 'Bukit Bintang', 'Bukit Tunku', 'Chowkit', 'Medan Tuanku', 'Pudu', 'TRX (Tun Razak Exchange)', 'KL Sentral', 'Brickfield'];
-    $fringe = ['Titiwangsa', 'Seputeh', 'Bangsar', 'Bukit Damansara', 'Damansara Heights', 'Ampang', 'Kenny Hills'];
-    $greater = ['Mont Kiara', 'Sri Hartamas', 'Petaling Jaya', 'Melawati', 'Setapak', 'Damansara', 'Cheras'];
+    $klcc = ['Kuala Lumpur', 'Kuala Lumpur City Centre', 'Bukit Bintang', 'Chow Kit', 'Bukit Ceylon', 'Bukit Tunku', 'Brickfields'];
+    $fringe = ['Bangsar', 'Ampang', 'Cheras', 'Sungai Besi', 'Kuchai Lama'];
+    $greater = ['Mont Kiara', 'Sri Hartamas', 'Bukit Jalil', 'Petaling Jaya', 'Bandar Utama', 'Damansara Perdana', 'Kota Damansara', 'Bandar Sunway'];
     $areasByName = $areas->keyBy('name');
 @endphp
 
@@ -83,7 +83,7 @@
                     <div class="info-icon mb-4 gold-text"><i class="bi bi-buildings"></i></div>
                     <h3 class="info-title font-display mb-3">@lang('messages.areas.cat_klcc_title')</h3>
                     <p class="info-desc mb-0">
-                        Servis utama merangkumi kawasan KLCC, Bukit Bintang, Bukit Tunku, Chowkit, Medan Tuanku, Pudu, TRX, KL Sentral dan Brickfield, di mana kami melayan tetamu hotel-hotel utama, serviced residence dan pencawang perniagaan utama di sekitar pusat bandar.
+                        Main service areas include Kuala Lumpur, Kuala Lumpur City Centre, Bukit Bintang, Chow Kit, Bukit Ceylon, Bukit Tunku and Brickfields, serving major hotels, serviced residences and business establishments in the city centre.
                     </p>
                 </div>
             </div>
@@ -92,7 +92,7 @@
                     <div class="info-icon mb-4 gold-text"><i class="bi bi-house-heart"></i></div>
                     <h3 class="info-title font-display mb-3">@lang('messages.areas.cat_fringe_title') & @lang('messages.areas.cat_greater_title')</h3>
                     <p class="info-desc mb-0">
-                        Bagi penduduk Bangsar, Mont Kiara, Sri Hartamas, Ampang, Damansara, Setapak, Cheras, Damansara Heights, Bukit Damansara, Petaling Jaya, Titiwangsa, Seputeh, Melawati dan Kenny Hills — kami datang terus ke apartment, condo atau kediaman anda.
+                        For residents of Bangsar, Ampang, Cheras, Sungai Besi, Kuchai Lama, Mont Kiara, Sri Hartamas, Bukit Jalil, Petaling Jaya, Bandar Utama, Damansara Perdana, Kota Damansara and Bandar Sunway — we come directly to your apartment, condo or residence.
                     </p>
                 </div>
             </div>
