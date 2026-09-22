@@ -128,6 +128,30 @@ img {
     }
 }
 
+/* Additional mobile sizing for tablets and smaller screens */
+@media (max-width: 991.98px) {
+    .trust-item {
+        padding: 0.9rem 0.8rem;
+    }
+
+    .trust-icon {
+        font-size: 1.8rem;
+        width: 58px;
+        height: 58px;
+        border-radius: 16px;
+    }
+
+    .trust-title {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .trust-desc {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+}
+
 /* Fix for mobile navigation and layout */
 .navbar {
     position: relative !important;
