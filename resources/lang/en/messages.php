@@ -13,7 +13,7 @@ return [
     'policy' => [
         'no_sex_short' => 'Strictly Professional • No Sex Service',
         'no_sex_title' => 'No Sex Service Policy',
-        'no_sex_desc' => 'MOLLY KL OUTCALL MASSAGE provides strictly professional, therapeutic wellness services only. Any inappropriate requests will be politely declined.',
+        'no_sex_desc' => 'Professional therapeutic wellness only. Inappropriate requests declined.',
         'badge' => 'No Sex Service',
     ],
     'hero' => [

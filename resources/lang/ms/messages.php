@@ -13,7 +13,7 @@ return [
     'policy' => [
         'no_sex_short' => 'Profesional Sepenuhnya • Tiada Perkhidmatan Seks',
         'no_sex_title' => 'Dasar Tiada Perkhidmatan Seks',
-        'no_sex_desc' => 'MOLLY KL OUTCALL MASSAGE menyediakan perkhidmatan kesejahteraan terapeutik yang profesional sahaja. Sebarang permintaan yang tidak sesuai akan ditolak dengan sopan.',
+        'no_sex_desc' => 'Perkhidmatan kesejahteraan terapeutik profesional sahaja. Permintaan tidak sesuai ditolak.',
         'badge' => 'Tiada Perkhidmatan Seks',
     ],
     'hero' => [
