@@ -88,21 +88,43 @@ img {
     .hero-meta-item {
         align-items: flex-start;
     }
-    
+
     .hero-meta-icon {
         margin-top: 0.2rem;
     }
-    
+
     .trust-icon {
         margin-bottom: 0.5rem;
     }
-    
+
     .why-icon {
         margin-bottom: 0.75rem;
     }
-    
+
     .techniques-card-icon {
         margin-bottom: 0.5rem;
+    }
+
+    /* Make trust section smaller on mobile */
+    .trust-item {
+        padding: 0.8rem 0.6rem;
+    }
+
+    .trust-icon {
+        font-size: 1.6rem;
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+    }
+
+    .trust-title {
+        font-size: 0.95rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .trust-desc {
+        font-size: 0.8rem;
+        line-height: 1.5;
     }
 }
 
