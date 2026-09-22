@@ -267,9 +267,9 @@
 </section>
 
 @php
-    $klcc = ['KLCC', 'Bukit Bintang', 'Bukit Tunku', 'Chowkit', 'Medan Tuanku', 'Pudu', 'TRX (Tun Razak Exchange)', 'KL Sentral', 'Brickfield'];
-    $fringe = ['Titiwangsa', 'Seputeh', 'Bangsar', 'Bukit Damansara', 'Damansara Heights', 'Ampang', 'Kenny Hills'];
-    $greater = ['Mont Kiara', 'Sri Hartamas', 'Petaling Jaya', 'Melawati', 'Setapak', 'Damansara', 'Cheras'];
+    $klcc = ['Kuala Lumpur', 'Kuala Lumpur City Centre', 'Bukit Bintang', 'Chow Kit', 'Bukit Ceylon', 'Bukit Tunku', 'Brickfields'];
+    $fringe = ['Bangsar', 'Ampang', 'Cheras', 'Sungai Besi', 'Kuchai Lama'];
+    $greater = ['Mont Kiara', 'Sri Hartamas', 'Bukit Jalil', 'Petaling Jaya', 'Bandar Utama', 'Damansara Perdana', 'Kota Damansara', 'Bandar Sunway'];
     $areasByName = $areas->keyBy('name');
 @endphp
 
