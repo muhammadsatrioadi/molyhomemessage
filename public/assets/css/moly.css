@@ -105,50 +105,50 @@ img {
         margin-bottom: 0.5rem;
     }
 
-    /* Make trust section smaller on mobile */
-    .trust-item {
-        padding: 0.8rem 0.6rem;
+    /* Make trust section smaller on mobile - using !important for specificity */
+    .trust-section .trust-item {
+        padding: 0.6rem 0.4rem !important;
     }
 
-    .trust-icon {
-        font-size: 1.6rem;
-        width: 52px;
-        height: 52px;
-        border-radius: 14px;
+    .trust-section .trust-icon {
+        font-size: 1.4rem !important;
+        width: 44px !important;
+        height: 44px !important;
+        border-radius: 12px !important;
     }
 
-    .trust-title {
-        font-size: 0.95rem;
-        margin-bottom: 0.3rem;
+    .trust-section .trust-title {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.25rem !important;
     }
 
-    .trust-desc {
-        font-size: 0.8rem;
-        line-height: 1.5;
+    .trust-section .trust-desc {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
     }
 }
 
 /* Additional mobile sizing for tablets and smaller screens */
 @media (max-width: 991.98px) {
-    .trust-item {
-        padding: 0.9rem 0.8rem;
+    .trust-section .trust-item {
+        padding: 0.8rem 0.6rem !important;
     }
 
-    .trust-icon {
-        font-size: 1.8rem;
-        width: 58px;
-        height: 58px;
-        border-radius: 16px;
+    .trust-section .trust-icon {
+        font-size: 1.6rem !important;
+        width: 52px !important;
+        height: 52px !important;
+        border-radius: 14px !important;
     }
 
-    .trust-title {
-        font-size: 1rem;
-        margin-bottom: 0.4rem;
+    .trust-section .trust-title {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.3rem !important;
     }
 
-    .trust-desc {
-        font-size: 0.85rem;
-        line-height: 1.6;
+    .trust-section .trust-desc {
+        font-size: 0.8rem !important;
+        line-height: 1.5 !important;
     }
 }
 
