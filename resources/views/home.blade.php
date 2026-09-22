@@ -7,28 +7,28 @@
 <section id="trust-section" class="moly-section trust-section py-5">
     <div class="container">
         <div class="row g-4">
-            <div class="col-sm-6 col-lg-3 reveal">
+            <div class="col-6 col-lg-3 reveal">
                 <div class="trust-item text-center">
                     <div class="trust-icon mb-3"><i class="bi bi-award"></i></div>
                     <h4 class="trust-title mb-2">@lang('messages.trust.professional')</h4>
                     <p class="trust-desc mb-0">@lang('messages.trust.professional_desc')</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3 reveal-delay-1">
+            <div class="col-6 col-lg-3 reveal-delay-1">
                 <div class="trust-item text-center">
                     <div class="trust-icon mb-3"><i class="bi bi-house-heart"></i></div>
                     <h4 class="trust-title mb-2">@lang('messages.trust.convenient')</h4>
                     <p class="trust-desc mb-0">@lang('messages.trust.convenient_desc')</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3 reveal-delay-2">
+            <div class="col-6 col-lg-3 reveal-delay-2">
                 <div class="trust-item text-center">
                     <div class="trust-icon mb-3"><i class="bi bi-clock-history"></i></div>
                     <h4 class="trust-title mb-2">@lang('messages.trust.flexible')</h4>
                     <p class="trust-desc mb-0">@lang('messages.trust.flexible_desc')</p>
                 </div>
             </div>
-            <div class="col-sm-6 col-lg-3 reveal-delay-3">
+            <div class="col-6 col-lg-3 reveal-delay-3">
                 <div class="trust-item trust-no-sex text-center">
                     <div class="trust-icon trust-icon-shield mb-3"><i class="bi bi-shield-check"></i></div>
                     <h4 class="trust-title mb-2">@lang('messages.footer.no_sex_badge')</h4>
