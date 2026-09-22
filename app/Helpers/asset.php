@@ -15,13 +15,18 @@ if (!function_exists('versioned_asset')) {
         // Check if file exists locally
         if (is_file($publicPath)) {
             $version = filemtime($publicPath);
-            
+
+            // Force cache bust for CSS files by adding current timestamp
+            if (str_ends_with($path, '.css')) {
+                $version = time();
+            }
+
             // Check if path already has query string
             $separator = '?';
             if (str_contains($path, '?')) {
                 $separator = '&';
             }
-            
+
             // Append version parameter
             return asset($relative) . $separator . 'v=' . $version;
         }
