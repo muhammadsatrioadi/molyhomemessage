@@ -51,8 +51,8 @@ return [
         'category_addon' => 'ADD-ON',
         'category_couples' => 'COUPLES',
         'order' => [
-            'Deep Tissue',
             'Balinese Massage',
+            'Deep Tissue',
             'Foot Massage',
             'Hot Stone',
             'Postnatal Massage',

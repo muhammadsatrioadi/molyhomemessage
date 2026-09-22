@@ -51,8 +51,8 @@ return [
         'category_addon' => 'TAMBAHAN',
         'category_couples' => 'PASANGAN',
         'order' => [
-            'Deep Tissue',
             'Balinese Massage',
+            'Deep Tissue',
             'Foot Massage',
             'Hot Stone',
             'Postnatal Massage',
