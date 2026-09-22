@@ -13,7 +13,7 @@ return [
     'policy' => [
         'no_sex_short' => 'Profesional Sepenuhnya • Tiada Perkhidmatan Seks',
         'no_sex_title' => 'Dasar Tiada Perkhidmatan Seks',
-        'no_sex_desc' => 'Perkhidmatan kesejahteraan terapeutik profesional sahaja. Permintaan tidak sesuai ditolak.',
+        'no_sex_desc' => 'Kesejahteraan sahaja. Tiada permintaan tidak sesuai.',
         'badge' => 'Tiada Perkhidmatan Seks',
     ],
     'hero' => [
@@ -34,11 +34,11 @@ return [
     ],
     'trust' => [
         'professional' => 'Ahli Terapi Profesional',
-        'professional_desc' => 'Terlatih dan berpengalaman',
+        'professional_desc' => 'Bertauliah',
         'convenient' => 'Perkhidmatan ke Pintu',
-        'convenient_desc' => 'Kami datang kepada anda',
+        'convenient_desc' => 'Ke anda',
         'flexible' => 'Waktu Fleksibel',
-        'flexible_desc' => '9:00 Pagi hingga 12:00 Malam',
+        'flexible_desc' => '9PG-12MLM',
     ],
     'services' => [
         'title' => 'Rawatan Urut Yang Tersedia',

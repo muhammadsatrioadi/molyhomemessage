@@ -13,7 +13,7 @@ return [
     'policy' => [
         'no_sex_short' => 'Strictly Professional • No Sex Service',
         'no_sex_title' => 'No Sex Service Policy',
-        'no_sex_desc' => 'Professional therapeutic wellness only. Inappropriate requests declined.',
+        'no_sex_desc' => 'Wellness only. No inappropriate requests.',
         'badge' => 'No Sex Service',
     ],
     'hero' => [
@@ -34,11 +34,11 @@ return [
     ],
     'trust' => [
         'professional' => 'Professional Therapists',
-        'professional_desc' => 'Trained and experienced',
+        'professional_desc' => 'Certified',
         'convenient' => 'Doorstep Service',
-        'convenient_desc' => 'We come to you',
+        'convenient_desc' => 'To you',
         'flexible' => 'Flexible Hours',
-        'flexible_desc' => '9:00 AM to 12:00 AM',
+        'flexible_desc' => '9AM-12AM',
     ],
     'services' => [
         'title' => 'Available Massage Treatments',
