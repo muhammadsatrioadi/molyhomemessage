@@ -240,7 +240,7 @@ return [
     'booking' => [
         'modal_title' => 'Tempah Urutan Anda',
         'modal_badge' => 'Panggilan Sahaja • Kuala Lumpur • 10PG – 11MLM Setiap Hari',
-        'massage_label' => 'Urut',
+        'massage_label' => 'Rawatan',
         'duration_label' => 'Tempoh',
         'date_label' => 'Tarikh Pilihan',
         'time_label' => 'Masa Pilihan',

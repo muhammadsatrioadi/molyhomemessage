@@ -240,7 +240,7 @@ return [
     'booking' => [
         'modal_title' => 'Book Your Massage',
         'modal_badge' => 'Outcall-Only • Kuala Lumpur • 10AM – 11PM Daily',
-        'massage_label' => 'Massage',
+        'massage_label' => 'Treatment',
         'duration_label' => 'Duration',
         'date_label' => 'Preferred Date',
         'time_label' => 'Preferred Time',
