@@ -46,8 +46,34 @@ class ServicePriceSeeder extends Seeder
                 ['duration' => 90, 'price' => 250],
                 ['duration' => 120, 'price' => 300],
             ],
+            'deep-tissue' => [
+                ['duration' => 60, 'price' => 180],
+                ['duration' => 90, 'price' => 250],
+                ['duration' => 120, 'price' => 300],
+            ],
             'hot-stone' => [
-                ['duration' => 60, 'price' => 400],
+                ['duration' => 120, 'price' => 400],
+            ],
+            'hot-herbal' => [
+                ['duration' => 120, 'price' => 380],
+            ],
+            'postnatal-massage' => [
+                ['duration' => 60, 'price' => 150],
+                ['duration' => 90, 'price' => 220],
+                ['duration' => 120, 'price' => 270],
+            ],
+            'prenatal-massage' => [
+                ['duration' => 60, 'price' => 140],
+                ['duration' => 90, 'price' => 200],
+                ['duration' => 120, 'price' => 240],
+            ],
+            'foot-massage' => [
+                ['duration' => 60, 'price' => 140],
+                ['duration' => 90, 'price' => 200],
+                ['duration' => 120, 'price' => 240],
+            ],
+            'lomi-lomi-massage' => [
+                ['duration' => 120, 'price' => 350],
             ],
             'thai-massage' => [
                 ['duration' => 60, 'price' => 200],
@@ -71,7 +97,6 @@ class ServicePriceSeeder extends Seeder
             ],
             'body-scrub' => [
                 ['duration' => 30, 'price' => 70],
-                ['duration' => 60, 'price' => 70],
             ],
         ];
 
