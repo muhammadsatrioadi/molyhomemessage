@@ -36,6 +36,10 @@
         <h3 class="card-title service-title font-display mb-3">{{ $service->name }}</h3>
         <p class="card-text service-description mb-4">{{ $service->description }}</p>
 
+        <p class="service-transport-note mb-3 text-muted small">
+            <i class="bi bi-truck me-1"></i>@lang('messages.services.free_transport_note')
+        </p>
+
         <div class="service-prices-list mb-4">
             @foreach($service->prices as $price)
                 <div class="service-price-row d-flex justify-content-between align-items-center py-2">

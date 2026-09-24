@@ -46,6 +46,7 @@ return [
         'duration' => ':duration minit',
         'book_now' => 'Tempah Rawatan Ini',
         'from' => 'Bermula dari',
+        'free_transport_note' => 'Pengangkutan percuma untuk rawatan 90 minit dan ke atas',
         'category_classic' => 'KLASIK',
         'category_signature' => 'TANDATANGAN',
         'category_addon' => 'TAMBAHAN',

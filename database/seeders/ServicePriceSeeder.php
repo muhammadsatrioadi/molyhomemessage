@@ -46,10 +46,13 @@ class ServicePriceSeeder extends Seeder
                 ['duration' => 90, 'price' => 250],
                 ['duration' => 120, 'price' => 300],
             ],
+            'hot-stone' => [
+                ['duration' => 60, 'price' => 400],
+            ],
             'thai-massage' => [
-                ['duration' => 60, 'price' => 240],
-                ['duration' => 90, 'price' => 310],
-                ['duration' => 120, 'price' => 370],
+                ['duration' => 60, 'price' => 200],
+                ['duration' => 90, 'price' => 270],
+                ['duration' => 120, 'price' => 350],
             ],
             'foot-massage-standard' => [
                 ['duration' => 60, 'price' => 140],
@@ -68,7 +71,7 @@ class ServicePriceSeeder extends Seeder
             ],
             'body-scrub' => [
                 ['duration' => 30, 'price' => 70],
-                ['duration' => 60, 'price' => 120],
+                ['duration' => 60, 'price' => 70],
             ],
         ];
 

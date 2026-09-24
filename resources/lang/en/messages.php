@@ -46,6 +46,7 @@ return [
         'duration' => ':duration min',
         'book_now' => 'Book This Treatment',
         'from' => 'From',
+        'free_transport_note' => 'Free transport for treatment 90 minutes and above',
         'category_classic' => 'CLASSIC',
         'category_signature' => 'SIGNATURE',
         'category_addon' => 'ADD-ON',
