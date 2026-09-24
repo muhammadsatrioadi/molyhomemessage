@@ -5,13 +5,6 @@
         </a>
 
         <div class="mobile-nav-controls d-lg-none">
-            <div class="mobile-lang-switcher">
-                <a href="{{ route('language', ['locale' => 'en']) }}"
-                   class="lang-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">EN</a>
-                <span class="lang-divider">|</span>
-                <a href="{{ route('language', ['locale' => 'ms']) }}"
-                   class="lang-link {{ app()->getLocale() === 'ms' ? 'active' : '' }}">BM</a>
-            </div>
             <button class="navbar-toggler moly-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#molyNavMenu" aria-controls="molyNavMenu"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -55,13 +48,6 @@
                     </span>
                 </div>
                 <div class="d-flex align-items-center justify-content-between justify-content-lg-start gap-2 gap-lg-3 order-1 order-lg-0">
-                    <div class="lang-switcher d-flex align-items-center small d-none d-lg-flex" role="group" aria-label="Language switcher">
-                        <a href="{{ route('language', ['locale' => 'en']) }}"
-                           class="lang-link {{ app()->getLocale() === 'en' ? 'active' : '' }}">EN</a>
-                        <span class="lang-divider">|</span>
-                        <a href="{{ route('language', ['locale' => 'ms']) }}"
-                           class="lang-link {{ app()->getLocale() === 'ms' ? 'active' : '' }}">BM</a>
-                    </div>
                     <a href="{{ whatsapp_contact_url() }}" target="_blank" rel="noopener noreferrer"
                        class="btn btn-moly-gold book-nav-btn d-inline-flex align-items-center"
                        aria-label="Book Now">
