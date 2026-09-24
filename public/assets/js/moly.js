@@ -85,10 +85,6 @@
             opt.value = String(svc.id);
             opt.dataset.name = svc.name;
             opt.textContent = svc.name;
-            if (svc.prices && svc.prices.length) {
-                var minP = Math.min.apply(null, svc.prices.map(function (p) { return p.price; }));
-                opt.textContent = svc.name + '  —  ' + getCurrencySymbol() + String(Math.round(minP));
-            }
             serviceSel.appendChild(opt);
         });
     }
@@ -112,7 +108,7 @@
             var opt = document.createElement('option');
             opt.value = String(price.duration);
             opt.dataset.price = String(price.price);
-            opt.textContent = price.duration + ' MIN  —  ' + getCurrencySymbol() + String(Math.round(price.price));
+            opt.textContent = price.duration + ' MIN';
             durationSel.appendChild(opt);
         });
     }
