@@ -25,25 +25,10 @@
              onerror="this.onerror=null;this.src='{{ versioned_asset('assets/images/service-placeholder.jpg') }}';">
         <div class="service-card-overlay"></div>
         <div class="service-category-tag {{ $cat['class'] }}">{{ $cat['label'] }}</div>
-        @if($service->prices->count() > 0)
-            <div class="service-from-badge">
-                <span class="from-label">@lang('messages.services.from')</span>
-                <span class="from-price">{{ config('moly.currency') }}{{ number_format($service->lowest_price, 0) }}</span>
-            </div>
-        @endif
     </div>
     <div class="card-body p-4">
         <h3 class="card-title service-title font-display mb-3">{{ $service->name }}</h3>
         <p class="card-text service-description mb-4">{{ $service->description }}</p>
-
-        <div class="service-prices-list mb-4">
-            @foreach($service->prices as $price)
-                <div class="service-price-row d-flex justify-content-between align-items-center py-2">
-                    <span class="service-duration">{{ $price->duration }} MIN</span>
-                    <span class="service-price">{{ config('moly.currency') }}{{ number_format($price->price, 0) }}</span>
-                </div>
-            @endforeach
-        </div>
 
         <button type="button"
                 class="btn btn-moly-gold w-100 book-service-btn d-inline-flex align-items-center justify-content-center"

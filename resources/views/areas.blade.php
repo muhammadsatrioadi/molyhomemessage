@@ -3,7 +3,7 @@
 @section('content')
 
 @php
-    $klcc = ['Kuala Lumpur', 'Kuala Lumpur City Centre', 'Bukit Bintang', 'Chow Kit', 'Bukit Ceylon', 'Bukit Tunku', 'Brickfields'];
+    $klcc = ['Kuala Lumpur', 'KLCC', 'Bukit Bintang', 'Chow Kit', 'Bukit Ceylon', 'Bukit Tunku', 'Brickfields'];
     $fringe = ['Bangsar', 'Ampang', 'Cheras', 'Sungai Besi', 'Kuchai Lama'];
     $greater = ['Mont Kiara', 'Sri Hartamas', 'Bukit Jalil', 'Petaling Jaya', 'Bandar Utama', 'Damansara Perdana', 'Kota Damansara', 'Bandar Sunway'];
     $areasByName = $areas->keyBy('name');
@@ -83,7 +83,7 @@
                     <div class="info-icon mb-4 gold-text"><i class="bi bi-buildings"></i></div>
                     <h3 class="info-title font-display mb-3">@lang('messages.areas.cat_klcc_title')</h3>
                     <p class="info-desc mb-0">
-                        Main service areas include Kuala Lumpur, Kuala Lumpur City Centre, Bukit Bintang, Chow Kit, Bukit Ceylon, Bukit Tunku and Brickfields, serving major hotels, serviced residences and business establishments in the city centre.
+                        Main service areas include Kuala Lumpur, KLCC, Bukit Bintang, Chow Kit, Bukit Ceylon, Bukit Tunku and Brickfields, serving major hotels, serviced residences and business establishments in the city centre.
                     </p>
                 </div>
             </div>
