@@ -63,7 +63,7 @@ class UpdateServicesCatalogSeeder extends Seeder
                 'name' => 'Lomi-Lomi Massage',
                 'slug' => 'lomi-lomi-massage',
                 'description' => 'A Hawaiian-inspired relaxation treatment characterised by long, flowing, rhythmic strokes across the body. Designed to encourage deep relaxation, release stress, and create a nurturing, uninterrupted wellness experience.',
-                'image' => '/assets/images/service-lomi.jpg',
+                'image' => '/assets/images/lomi-lomi-massage.jpg',
                 'sort_order' => 8,
             ],
             [
