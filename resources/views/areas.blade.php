@@ -33,8 +33,6 @@
 <section class="moly-section py-5 py-lg-6">
     <div class="container">
         <div class="mb-5 mb-lg-6 reveal">
-            <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_klcc_title')</h3>
-            <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_klcc_desc')</p>
             <div class="areas-cards-grid">
                 @foreach($klcc as $name)
                     @if(isset($areasByName[$name]))
@@ -48,8 +46,6 @@
         </div>
 
         <div class="mb-5 mb-lg-6 reveal-delay-1">
-            <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_fringe_title')</h3>
-            <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_fringe_desc')</p>
             <div class="areas-cards-grid">
                 @foreach($fringe as $name)
                     @if(isset($areasByName[$name]))
@@ -63,8 +59,6 @@
         </div>
 
         <div class="mb-5 mb-lg-6 reveal-delay-2">
-            <h3 class="area-category-title font-display mb-2">@lang('messages.areas.cat_greater_title')</h3>
-            <p class="area-category-desc mb-4 mb-lg-5">@lang('messages.areas.cat_greater_desc')</p>
             <div class="areas-cards-grid">
                 @foreach($greater as $name)
                     @if(isset($areasByName[$name]))
