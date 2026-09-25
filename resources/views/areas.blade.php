@@ -3,9 +3,9 @@
 @section('content')
 
 @php
-    $klcc = ['Kuala Lumpur', 'KLCC', 'Bukit Bintang', 'Chow Kit', 'Bukit Ceylon', 'Bukit Tunku', 'Brickfields'];
-    $fringe = ['Bangsar', 'Ampang', 'Cheras', 'Sungai Besi', 'Kuchai Lama'];
-    $greater = ['Mont Kiara', 'Sri Hartamas', 'Bukit Jalil', 'Petaling Jaya', 'Bandar Utama', 'Damansara Perdana', 'Kota Damansara', 'Bandar Sunway'];
+    $klcc = ['Kuala Lumpur', 'KLCC', 'Bukit Bintang', 'Chow Kit', 'Bukit Ceylon', 'Bukit Tunku', 'Brickfields', 'KL Sentral', 'Taman U Thant', 'Titiwangsa', 'Ampang Hilir', 'Kampung Pandan', 'Desa Pandan', 'Segambut', 'Sentul'];
+    $fringe = ['Bangsar', 'Ampang', 'Cheras', 'Sungai Besi', 'Kuchai Lama', 'Bangsar South', 'Kampung Kerinchi', 'Pantai Hillpark', 'Seputeh', 'Melawati'];
+    $greater = ['Mont Kiara', 'Sri Hartamas', 'Bukit Jalil', 'Petaling Jaya', 'Bandar Utama', 'Damansara Perdana', 'Kota Damansara', 'Bandar Sunway', 'Damansara Utama', 'Bukit Damansara', 'Taman Duta', 'Bukit Bandaraya'];
     $areasByName = $areas->keyBy('name');
 @endphp
 
