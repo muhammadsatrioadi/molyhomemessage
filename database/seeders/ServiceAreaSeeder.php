@@ -30,10 +30,27 @@ class ServiceAreaSeeder extends Seeder
             ['name' => 'Damansara Perdana', 'sort_order' => 18],
             ['name' => 'Kota Damansara', 'sort_order' => 19],
             ['name' => 'Bandar Sunway', 'sort_order' => 20],
+            ['name' => 'KL Sentral', 'sort_order' => 21],
+            ['name' => 'Damansara Utama', 'sort_order' => 22],
+            ['name' => 'Bukit Damansara', 'sort_order' => 23],
+            ['name' => 'Taman Duta', 'sort_order' => 24],
+            ['name' => 'Bukit Bandaraya', 'sort_order' => 25],
+            ['name' => 'Bangsar South', 'sort_order' => 26],
+            ['name' => 'Kampung Kerinchi', 'sort_order' => 27],
+            ['name' => 'Pantai Hillpark', 'sort_order' => 28],
+            ['name' => 'Seputeh', 'sort_order' => 29],
+            ['name' => 'Taman U Thant', 'sort_order' => 30],
+            ['name' => 'Titiwangsa', 'sort_order' => 31],
+            ['name' => 'Ampang Hilir', 'sort_order' => 32],
+            ['name' => 'Kampung Pandan', 'sort_order' => 33],
+            ['name' => 'Desa Pandan', 'sort_order' => 34],
+            ['name' => 'Segambut', 'sort_order' => 35],
+            ['name' => 'Sentul', 'sort_order' => 36],
+            ['name' => 'Melawati', 'sort_order' => 37],
         ];
 
         foreach ($areas as $area) {
-            ServiceArea::create($area);
+            ServiceArea::firstOrCreate(['name' => $area['name']], $area);
         }
     }
 }
