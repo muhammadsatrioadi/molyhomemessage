@@ -43,6 +43,7 @@ return [
     'services' => [
         'title' => 'Available Massage Treatments',
         'subtitle' => 'Nine premium therapeutic treatments — delivered at your hotel, residence or preferred location across KL',
+        'transport_fee_note' => 'Extra transport fee +RM30 for 1 hour treatment',
         'duration' => ':duration min',
         'book_now' => 'Book This Treatment',
         'from' => 'From',

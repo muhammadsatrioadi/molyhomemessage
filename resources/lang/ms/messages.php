@@ -43,6 +43,7 @@ return [
     'services' => [
         'title' => 'Rawatan Urut Yang Tersedia',
         'subtitle' => 'Sembilan rawatan terapeutik premium — disampaikan di hotel, kediaman atau lokasi pilihan anda di KL',
+        'transport_fee_note' => 'Yuran pengangkutan tambahan +RM30 untuk rawatan 1 jam',
         'duration' => ':duration minit',
         'book_now' => 'Tempah Rawatan Ini',
         'from' => 'Bermula dari',

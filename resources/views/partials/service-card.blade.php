@@ -36,7 +36,7 @@
         <h3 class="card-title service-title font-display mb-3">{{ $service->name }}</h3>
         <p class="card-text service-description mb-4">{{ $service->description }}</p>
 
-        <p class="service-transport-note mb-3 text-muted small">
+        <p class="service-transport-note mb-3 fw-bold text-success">
             <i class="bi bi-truck me-1"></i>@lang('messages.services.free_transport_note')
         </p>
 

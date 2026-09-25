@@ -49,6 +49,7 @@
             </span>
             <h2 class="section-title font-display">@lang('messages.services.title')</h2>
             <p class="section-subtitle mx-auto">@lang('messages.services.subtitle')</p>
+            <p class="section-note text-center mt-3 mb-0 small text-muted">@lang('messages.services.transport_fee_note')</p>
         </div>
 
         <div class="row g-4 g-lg-5 services-row" id="services-grid">
