@@ -18,7 +18,7 @@
     <div class="error-page">
         <div class="container">
             <div class="error-brand">
-                @include('partials.brand-mark')
+                <img src="{{ versioned_asset('assets/images/LOGO.png') }}" alt="MOLLY Logo" class="brand-logo-img">
             </div>
             <div class="error-code">404</div>
             <h1 class="error-title">Looks like this page took a wrong turn.</h1>
