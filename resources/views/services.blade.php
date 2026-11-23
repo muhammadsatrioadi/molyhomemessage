@@ -125,6 +125,7 @@
         return [
             'id' => $s->id,
             'name' => $s->name,
+            'is_addon' => (bool) ($s->is_addon ?? false),
             'prices' => $s->prices->map(function ($p) {
                 return ['id' => $p->id, 'duration' => $p->duration, 'price' => $p->price];
             }),

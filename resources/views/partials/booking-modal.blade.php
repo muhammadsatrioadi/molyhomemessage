@@ -34,7 +34,7 @@
                             </select>
                         </div>
 
-                        <div class="col-md-6">
+                        <div class="col-md-6" id="booking_duration_wrapper">
                             <label for="booking_duration" class="form-label booking-label">
                                 @lang('messages.booking.duration_label') *
                             </label>

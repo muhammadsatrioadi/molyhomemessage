@@ -34,11 +34,11 @@
                     services include:
                 </p>
                 <ul>
-                    <li>Balinese Massage</li>
+                    <li>Relaxing Massage</li>
+                    <li>Standard Massage</li>
                     <li>Deep Tissue Massage</li>
                     <li>Thai Massage</li>
-                    <li>Foot Massage (Standard and Deep Pressure)</li>
-                    <li>Body Scrub</li>
+                    <li>Add-ons: Cupping, Body Scrub, Hot Stone</li>
                 </ul>
                 <p>
                     All services are wellness and relaxation oriented. Our services are not a substitute for

@@ -113,6 +113,32 @@
         });
     }
 
+    function findServiceById(serviceId) {
+        if (!serviceId && serviceId !== 0) return null;
+        for (var i = 0; i < services.length; i++) {
+            if (String(services[i].id) === String(serviceId)) return services[i];
+        }
+        return null;
+    }
+
+    function toggleDurationField(isAddon) {
+        var wrapper = document.getElementById('booking_duration_wrapper');
+        if (wrapper) wrapper.style.display = isAddon ? 'none' : '';
+    }
+
+    function applyServiceSelection(serviceId) {
+        var svc = findServiceById(serviceId);
+        var isAddon = !!(svc && svc.is_addon);
+        updateDurationOptions(String(serviceId));
+        toggleDurationField(isAddon);
+        if (isAddon) {
+            var durSel = document.getElementById('booking_duration');
+            if (durSel && svc.prices && svc.prices.length) {
+                durSel.value = String(svc.prices[0].duration);
+            }
+        }
+    }
+
     function setMinBookingDate() {
         var dateEl = document.getElementById('booking_date');
         if (!dateEl) return;
@@ -136,9 +162,10 @@
                     var serviceSel = document.getElementById('booking_service');
                     if (serviceSel && serviceId) {
                         serviceSel.value = String(serviceId);
-                        updateDurationOptions(String(serviceId));
+                        applyServiceSelection(String(serviceId));
                     } else {
                         populateServiceOptions();
+                        toggleDurationField(false);
                     }
                 }, 30);
             });
@@ -147,9 +174,10 @@
         var serviceSel = document.getElementById('booking_service');
         if (serviceSel) {
             serviceSel.addEventListener('change', function () {
-                updateDurationOptions(serviceSel.value);
+                var svc = findServiceById(serviceSel.value);
+                applyServiceSelection(serviceSel.value);
                 var durSel = document.getElementById('booking_duration');
-                if (durSel) durSel.value = '';
+                if (durSel && !(svc && svc.is_addon)) durSel.value = '';
             });
         }
 
@@ -180,6 +208,8 @@
                 var serviceName = svcSel.options[svcSel.selectedIndex].getAttribute('data-name')
                     || svcSel.options[svcSel.selectedIndex].textContent.split('—')[0].trim();
                 var durationLabel = durVal + ' minutes';
+                var selectedService = findServiceById(svcId);
+                var isAddon = !!(selectedService && selectedService.is_addon);
                 try {
                     var d = new Date(dateVal + 'T00:00:00');
                     if (!isNaN(d.getTime())) {
@@ -204,12 +234,14 @@
                     '',
                     'I would like to book:',
                     '',
-                    'Massage: ' + serviceName,
-                    'Duration: ' + durationLabel,
-                    'Preferred date: ' + dateVal,
-                    'Preferred time: ' + timeVal,
-                    'Location: ' + locVal
+                    'Massage: ' + serviceName
                 ];
+                if (!isAddon) {
+                    messageLines.push('Duration: ' + durationLabel);
+                }
+                messageLines.push('Preferred date: ' + dateVal);
+                messageLines.push('Preferred time: ' + timeVal);
+                messageLines.push('Location: ' + locVal);
                 var message = messageLines.join('\n');
                 var waUrl = 'https://wa.me/' + waNumber + '?text=' + encodeURIComponent(message);
                 window.open(waUrl, '_blank', 'noopener,noreferrer');

@@ -12,6 +12,8 @@
         'foot-massage-deep-pressure' => ['label' => __('messages.services.category_classic'), 'class' => 'tag-classic'],
         'couples-shared-session' => ['label' => __('messages.services.category_couples'), 'class' => 'tag-couples'],
         'body-scrub' => ['label' => __('messages.services.category_addon'), 'class' => 'tag-addon'],
+        'cupping' => ['label' => __('messages.services.category_addon'), 'class' => 'tag-addon'],
+        'hot-stone' => ['label' => __('messages.services.category_addon'), 'class' => 'tag-addon'],
     ];
     $cat = $categoryMap[$service->slug] ?? ['label' => __('messages.services.category_signature'), 'class' => 'tag-signature'];
 @endphp
@@ -43,7 +45,9 @@
         <div class="service-prices-list mb-4">
             @foreach($service->prices as $price)
                 <div class="service-price-row d-flex justify-content-between align-items-center py-2">
-                    <span class="service-duration">{{ $price->duration }} MIN</span>
+                    @unless(!empty($service->is_addon))
+                        <span class="service-duration">{{ $price->duration }} MIN</span>
+                    @endunless
                     <span class="service-price">{{ config('moly.currency') }}{{ number_format($price->price, 0) }}</span>
                 </div>
             @endforeach

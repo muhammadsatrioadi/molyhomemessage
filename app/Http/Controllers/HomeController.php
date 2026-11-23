@@ -48,7 +48,7 @@ class HomeController extends Controller
         $baseServices = Service::with('prices')->active()->get();
         $services = $this->buildTreatments($baseServices);
 
-        $seoDescription = config('moly.business.name') . ' offers nine premium outcall massage treatments: Deep Tissue, Balinese Massage, Foot Massage, Hot Stone, Postnatal, Prenatal, Body Scrub, Lomi-Lomi and Thai Massage across Kuala Lumpur.';
+        $seoDescription = config('moly.business.name') . ' offers premium outcall massage treatments — Relaxing Massage, Standard Massage, Deep Tissue and Thai Massage — plus add-ons Cupping, Body Scrub and Hot Stone across Kuala Lumpur.';
 
         $seo = [
             'title' => __('messages.services.title') . ' | ' . config('moly.business.name'),
@@ -204,16 +204,16 @@ class HomeController extends Controller
         $placeholderUrl = versioned_asset('assets/images/service-placeholder.jpg');
 
         $defaultImages = [
-            'Deep Tissue'       => '/assets/images/service-lomi.jpg',
-            'Balinese Massage'  => '/assets/images/service-balinese.jpg',
-            'Foot Massage'      => '/assets/images/service-foot-standard.jpg',
-            'Hot Stone'         => '/assets/images/hot-stone-massage.jpg',
-            'Postnatal Massage' => '/assets/images/service-Postnatal Massage.jpg',
-            'Prenatal Massage'  => '/assets/images/Prenatal Massage.jpg',
-            'Body Scrub'        => '/assets/images/service-body-scrub.jpg',
-            'Lomi-Lomi Massage' => '/assets/images/service-deep-tissue.jpg',
-            'Thai Massage'      => '/assets/images/service-thai.jpg',
+            'Relaxing Massage' => '/assets/images/service-lomi.jpg',
+            'Standard Massage' => '/assets/images/service-swedish.jpg',
+            'Deep Tissue'      => '/assets/images/service-deep-tissue.jpg',
+            'Thai Massage'     => '/assets/images/service-thai.jpg',
+            'Cupping'          => '/assets/images/service-aromatherapy.jpg',
+            'Body Scrub'       => '/assets/images/service-body-scrub.jpg',
+            'Hot Stone'        => '/assets/images/hot-stone-massage.jpg',
         ];
+
+        $addonSlugs = ['cupping', 'body-scrub', 'hot-stone'];
 
         $result = collect();
 
@@ -248,6 +248,7 @@ class HomeController extends Controller
             $obj->name = $treatmentName;
             $slugRaw = preg_replace('/[^A-Za-z0-9]+/', '-', trim((string)$treatmentName));
             $obj->slug = strtolower(trim((string)$slugRaw, '-'));
+            $obj->is_addon = in_array($obj->slug, $addonSlugs, true);
             $obj->description = $descriptions[$treatmentName] ?? '';
 
             if (isset($defaultImages[$treatmentName])) {
@@ -317,7 +318,7 @@ class HomeController extends Controller
                 '@type' => 'City',
                 'name' => 'Kuala Lumpur, Malaysia',
             ],
-            'priceRange' => 'RM70 - RM370',
+            'priceRange' => 'RM70 - RM310',
             'openingHoursSpecification' => [
                 '@type' => 'OpeningHoursSpecification',
                 'dayOfWeek' => [
@@ -342,7 +343,9 @@ class HomeController extends Controller
                     '@type' => 'Offer',
                     'priceCurrency' => 'MYR',
                     'price' => (string)$price->price,
-                    'description' => $price->duration . ' minutes session',
+                    'description' => !empty($service->is_addon)
+                        ? 'Add-on service'
+                        : $price->duration . ' minutes session',
                 ];
             }
             $serviceSchema[] = [

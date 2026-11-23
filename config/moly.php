@@ -34,7 +34,7 @@ return [
 
     'site' => [
         'description' => 'Professional outcall massage service across Kuala Lumpur. Therapist travels to your hotel, residence, apartment or preferred location. Book directly via WhatsApp.',
-        'keywords' => 'outcall massage, kuala lumpur outcall massage, hotel massage, balinese massage, deep tissue, thai massage, foot massage, hot stone, prenatal massage, postnatal massage, body scrub, lomi lomi',
+        'keywords' => 'outcall massage, kuala lumpur outcall massage, hotel massage, relaxing massage, standard massage, deep tissue, thai massage, cupping, body scrub, hot stone',
     ],
 
     'seo' => [
