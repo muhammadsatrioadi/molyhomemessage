@@ -208,7 +208,7 @@ class HomeController extends Controller
             'Standard Massage' => '/assets/images/service-swedish.jpg',
             'Deep Tissue'      => '/assets/images/service-deep-tissue.jpg',
             'Thai Massage'     => '/assets/images/service-thai.jpg',
-            'Cupping'          => '/assets/images/service-aromatherapy.jpg',
+            'Cupping'          => '/assets/images/cupping.jpg',
             'Body Scrub'       => '/assets/images/service-body-scrub.jpg',
             'Hot Stone'        => '/assets/images/hot-stone-massage.jpg',
         ];
